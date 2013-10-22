@@ -1,0 +1,105 @@
+! urxvt settings
+!A
+urxvt*geometry:         80x25
+urxvt*title:            terminal
+urxvt*termName:         rxvt
+urxvt*background:       #242424
+urxvt*foreground:       white
+urxvt*cursorBlink:      true
+urxvt*cursorColor:      magenta
+urxvt*underlineColor:   #86a2be
+
+urxvt*cutchars:         `"()'*<>[]{|}
+!A
+urxvt*font:             xft:Droid Sans Mono:pixelsize=18
+!urxvt*font:             xft:Zero Threes:pixelsize=12
+!urxvt*boldFont:         xft:Terminal:pixelsize=12
+
+!URxvt*font: xft:Misc Fixed:pixelsize=14
+!:antialias=true:hinting=true
+!URxvt*boldFont: xft:Misc Fixed:bold:pixelsize=14
+!:antialias=true:hinting=true
+
+! A
+urxvt*scrollBar:        false
+urxvt*jumpScroll:       false
+xterm*scrollTtyOutput: false
+URxvt.visualBell: true
+! A
+urxvt*inheritPixmap:   true
+urxvt*internalBorder:   1
+URxvt*externalBorder:    0
+urxvt*loginShell:       true
+urxvt*saveLines:        15000
+
+! A
+urxvt*shading:         30
+urxvt*fading:   10
+
+! urxvt-256color settings
+!A
+urxvt-256color*geometry:         80x25
+urxvt-256color*title:            terminal
+urxvt-256color*termName:         rxvt
+urxvt-256color*background:       #242424
+urxvt-256color*foreground:       white
+urxvt-256color*cursorBlink:      true
+urxvt-256color*cursorColor:      magenta
+urxvt-256color*underlineColor:   #86a2be
+
+urxvt-256color*cutchars:         `"()'*<>[]{|}
+!A
+urxvt-256color*font:             xft:Droid Sans Mono:pixelsize=18
+!urxvt-256color*boldFont:         xft:DejaVu Sans Mono:pixelsize=10
+! A
+urxvt-256color*scrollBar:        false
+urxvt-256color*jumpScroll:       false
+!xterm*scrollTtyOutput: false
+urxvt-256color.visualBell: true
+! A
+urxvt-256color*inheritPixmap:   true
+urxvt-256color*internalBorder:   1
+urxvt-256color*externalBorder:    0
+urxvt-256color*loginShell:       true
+urxvt-256color*saveLines:        15000
+
+! A
+urxvt-256color*shading:         30
+urxvt-256color*fading:   10
+
+! Baskerville - Count Von Count
+*background:  #000000
+*foreground:  #919191
+
+
+! BLACK
+*color0:      #303030
+*color8:      #5E5E5E
+
+! WHITE
+*color7:      #C6C6C6
+*color15:     #FFFFFF
+
+! RED
+*color1:      #C10023
+*color9:      #FF8781
+
+! YELLOW
+*color3:      #B51D2C
+*color11:     #FF948B
+
+! GREEN
+*color2:      #A83334
+*color10:     #FFA095
+
+! CYAN
+*color6:      #9A413D
+*color14:     #FFAAA0
+
+! BLUE
+*color4:      #8C4B46
+*color12:     #FEB2AA
+
+! MAGENTA
+*color5:      #7D534F
+*color13:     #EBBBB5
