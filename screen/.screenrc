@@ -1,0 +1,34 @@
+term screen-256color
+terminfo rxvt-unicode 'Co#256:AB=\E[48;5;%dm:AF=\E[38;5;%dm'
+#term rxvt
+
+# detach on hangup
+autodetach on
+caption always "%{Ck} %H %D %Y-%02m-%02d %0C%a %{Yk}|%{G} %l %{Yk}|%{Wk} %-w%{= Yk}%n %t%{-}%+w"
+#caption always "%{Yb} %H %D %Y-%02m-%02d %0C%a %{k}|%{G} %l %{k}|%{W} %-w%{bW}%n %t%{Wb}%+w"
+#icaption always "%{Ck} %D %Y-%02m-%02d %0C%a %{Yk}|%{r} %l %{Yk}|%{Wk} %-w%{= Yk}%n %t%{-}%+w"
+defscrollback 1000
+
+# don't display the copyright page
+startup_message off
+
+# screen -t local 0
+# screen -t mail 1 mutt
+# screen -t 40 2 rlogin server
+screen -t sh 1
+screen -t sh 2
+screen -t sh 3
+screen -t sh 4
+screen -t sh 5
+screen -t sh 6
+screen -t sh 7
+screen -t sh 8
+screen -t sh 9
+
+select 1
+
+attrcolor b ".I"
+termcapinfo urxvt 'Co#256:AB=\E[48;5;%dm:AF=\E38;5;%dm'
+defbce "on"
+
+
