@@ -50,6 +50,7 @@ source $ZSH/oh-my-zsh.sh
 export PATH=$PATH:/usr/local/sbin:/usr/local/bin:/usr/bin:/usr/bin/core_perl:/home/sam/bin
 
 export LC_ALL="C"
+export EDITOR="vim"
 
 alias tmux="tmux -2"
 
