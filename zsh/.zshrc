@@ -54,7 +54,7 @@ export EDITOR="vim"
 
 alias tmux="tmux -2"
 
-INC_APPEND_HISTORY="true"
+INC_APPEND_HISTORY="false"
 SHARE_HISTORY="false"
 EXTENDED_HISTORY="true"
 
