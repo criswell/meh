@@ -12,6 +12,9 @@ require("debian.menu")
 
 --require("battery")
 
+-- lain
+local lain = require("lain")
+
 -- {{{ Error handling
 -- Check if awesome encountered an error during startup and fell back to
 -- another config (This code will only ever execute for the fallback config)
@@ -40,7 +43,7 @@ end
 -- {{{ Variable definitions
 -- Themes define colours, icons, and wallpapers
 -- beautiful.init("/usr/share/awesome/themes/sky/theme.lua")
-beautiful.init("/home/sam/.config/awesome/themes/bamboo/theme.lua")
+beautiful.init("/home/sam/.config/awesome/sawesome/samboo/theme.lua")
 
 -- This is used later as the default terminal and editor to run.
 -- terminal = "x-terminal-emulator"
@@ -60,6 +63,7 @@ modkey = "Mod1"
 layouts =
 {
     awful.layout.suit.tile,
+    lain.layout.termfair,
     awful.layout.suit.tile.left,
     awful.layout.suit.tile.bottom,
     awful.layout.suit.tile.top,
@@ -72,6 +76,9 @@ layouts =
     awful.layout.suit.magnifier,
     awful.layout.suit.floating
 }
+lain.layout.termfair.nmaster = 3
+lain.layout.termfair.ncol = 1
+beautiful.useless_gap_width = 0
 -- }}}
 
 -- {{{ Tags
