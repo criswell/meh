@@ -1,3 +1,7 @@
+!terminfo
+XTerm*termName: xterm-256color
+URxvt*termName: rxvt-unicode
+
 ! urxvt settings
 !A
 urxvt*geometry:         80x25
