@@ -47,7 +47,7 @@ beautiful.init("/home/sam/.config/awesome/sawesome/samboo/theme.lua")
 
 -- This is used later as the default terminal and editor to run.
 -- terminal = "x-terminal-emulator"
-terminal = "urxvt"
+terminal = "urxvtc"
 -- terminal = "gnome-terminal"
 editor = os.getenv("EDITOR") or "editor"
 editor_cmd = terminal .. " -e " .. editor
@@ -389,3 +389,8 @@ end)
 client.add_signal("focus", function(c) c.border_color = beautiful.border_focus end)
 client.add_signal("unfocus", function(c) c.border_color = beautiful.border_normal end)
 -- }}}
+
+awful.util.spawn_with_shell("urxvtd -q -o -f")
+awful.util.spawn_with_shell("xscreensaver")
+awful.util.spawn_with_shell("gnome-sound-applet")
+
