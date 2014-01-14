@@ -390,7 +390,7 @@ client.add_signal("focus", function(c) c.border_color = beautiful.border_focus e
 client.add_signal("unfocus", function(c) c.border_color = beautiful.border_normal end)
 -- }}}
 
-awful.util.spawn_with_shell("urxvtd -q -o -f")
+awful.util.spawn_with_shell("/home/sam/bin/urxvtd_start")
 awful.util.spawn_with_shell("xscreensaver")
 awful.util.spawn_with_shell("gnome-sound-applet")
 
