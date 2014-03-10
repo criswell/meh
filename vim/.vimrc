@@ -3,10 +3,10 @@
 "       Amir Salihefendic
 "       http://amix.dk - amix@amix.dk
 "
-" Version: 
+" Version:
 "       5.0 - 29/05/12 15:43:36
 "
-" Blog_post: 
+" Blog_post:
 "       http://amix.dk/blog/post/19691#The-ultimate-Vim-configuration-on-Github
 "
 " Awesome_version:
@@ -19,7 +19,7 @@
 " Syntax_highlighted:
 "       http://amix.dk/vim/vimrc.html
 "
-" Raw_version: 
+" Raw_version:
 "       http://amix.dk/vim/vimrc.txt
 "
 " Sections:
@@ -482,7 +482,10 @@ Bundle 'flazz/vim-colorschemes'
 Bundle 'neocomplcache'
 Bundle 'bling/vim-airline'
 Bundle 'Valloric/YouCompleteMe'
-Bundle 'scrooloose/syntastic'
+" NOTE: I'd love to keep syntastic, but it's too cranky when dealing
+" with multiple virtualenvs
+"Bundle 'scrooloose/syntastic'
+
 "Bundle 'Lokaltog/powerline', {'rtp': '.local/lib/python2.7/site-packages/powerline/bindings/vim/'}
 " git repos on your local machine (ie. when working on your own plugin)
 "Bundle 'file:///Users/gmarik/path/to/plugin'
