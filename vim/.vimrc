@@ -513,3 +513,5 @@ source ~/.vimcolor
 "set background=dark
 "source ~/rmbackground.vim
 let g:airline#extensions#tabline#enabled = 1
+let g:ycm_autoclose_preview_window_after_insertion = 1
+
