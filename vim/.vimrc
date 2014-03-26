@@ -324,14 +324,15 @@ map <C-n> :enew
 map <C-o> :e . <Enter>
 map <C-s> :w <Enter>
 map <C-c> y
-map <C-v> p
+"map <C-v> p
 map <C-x> d
 map <C-z> u
-map <C-t> :vsplit . <Enter>
+map <C-v> :vsplit . <Enter>
+map <C-h> :split . <Enter>
 map <C-i> >>
 map <C-f> /
 map <F3> n
-map <C-h> :%s/
+"map <C-h> :%s/
 map <S-t> vat
 map <S-T> vit
 map <S-{> vi{
