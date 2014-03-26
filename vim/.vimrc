@@ -197,12 +197,6 @@ map <c-space> ?
 " Disable highlight when <leader><cr> is pressed
 map <silent> <leader><cr> :noh<cr>
 
-" Smart way to move between windows
-map <C-j> <C-W>j
-map <C-k> <C-W>k
-map <C-h> <C-W>h
-map <C-l> <C-W>l
-
 " Close the current buffer
 map <leader>bd :Bclose<cr>
 
@@ -333,10 +327,8 @@ map <C-c> y
 map <C-v> p
 map <C-x> d
 map <C-z> u
-map <C-t> :tabnew <Enter>
+map <C-t> :vsplit . <Enter>
 map <C-i> >>
-map <C-w> :close <Enter>
-map <C-W> :q! <Enter>
 map <C-f> /
 map <F3> n
 map <C-h> :%s/
