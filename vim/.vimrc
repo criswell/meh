@@ -327,8 +327,10 @@ map <C-c> y
 "map <C-v> p
 map <C-x> d
 map <C-z> u
-map <C-v> :vsplit . <Enter>
-map <C-h> :split . <Enter>
+"map <C-v> :vsplit . <Enter>
+map <C-v> :vnew <Enter>
+"map <C-h> :split . <Enter>
+map <C-h> :new <Enter>
 map <C-i> >>
 map <C-f> /
 map <F3> n
