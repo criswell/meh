@@ -20,9 +20,10 @@
 "    -> Status line
 "    -> Editing mappings
 "    -> vimgrep searching and cope displaying
-"    -> Spell checking
+"    -> Keybindings
 "    -> Misc
 "    -> Helper functions
+"    -> Bundles
 "
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
@@ -123,10 +124,6 @@ set tm=500
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Enable syntax highlighting
 syntax enable
-
-"colorscheme delek
-"colorscheme jhdark
-"set background=dark
 
 " Set extra options when running in GUI mode
 if has("gui_running")
@@ -238,14 +235,6 @@ set viminfo^=%
 " Always show the status line
 set laststatus=2
 
-" Format the status line
-"set statusline=\ %{HasPaste()}%F%m%r%h\ %w\ \ CWD:\ %r%{getcwd()}%h\ \ \ Line:\ %l
-"set statusline=%F%m%r%h%w\ \|\ %{&ff}\ \|\ %Y\ \|\ ASCII=\%03.3b\ \|\ HEX=\%02.2B\|\ %04l,%03v\|\ %p%%
-
-"python from powerline.vim import setup as powerline_setup
-"python powerline_setup()
-"python del powerline_setup
-
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Editing mappings
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -308,7 +297,7 @@ map <leader>p :cp<cr>
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" => Spell checking
+" => Keybindings
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Pressing ,ss will toggle and untoggle spell checking
 map <leader>ss :setlocal spell!<cr>
@@ -432,9 +421,11 @@ function! SuperCleverTab()
     endif
 endfunction
 
-inoremap <Tab> <C-R>=SuperCleverTab()<cr>
 
-"call pathogen#infect()
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => Bundles
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+inoremap <Tab> <C-R>=SuperCleverTab()<cr>
 
 set nocompatible               " be iMproved
 filetype off                   " required!
