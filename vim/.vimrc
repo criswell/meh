@@ -228,6 +228,39 @@ autocmd BufReadPost *
 " Remember info about open buffers on close
 set viminfo^=%
 
+" Auto paste mode when pasting
+function! WrapForTmux(s)
+  if !exists('$TMUX')
+    return a:s
+  endif
+
+  let tmux_start = "\<Esc>Ptmux;"
+  let tmux_end = "\<Esc>\\"
+
+  return tmux_start . substitute(a:s, "\<Esc>", "\<Esc>\<Esc>", 'g') . tmux_end
+endfunction
+
+let &t_SI .= WrapForTmux("\<Esc>[?2004h")
+let &t_EI .= WrapForTmux("\<Esc>[?2004l")
+
+function! XTermPasteBegin()
+  set pastetoggle=<Esc>[201~
+  set paste
+  return ""
+endfunction
+
+inoremap <special> <expr> <Esc>[200~ XTermPasteBegin()
+
+" Home key more sensible
+function ExtendedHome()
+    let column = col('.')
+    normal! ^
+    if column == col('.')
+        normal! 0
+    endif
+endfunction
+noremap <silent> <Home> :call ExtendedHome()<CR>
+inoremap <silent> <Home> <C-O>:call ExtendedHome()<CR>
 
 """"""""""""""""""""""""""""""
 " => Status line
