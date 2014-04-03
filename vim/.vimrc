@@ -363,8 +363,12 @@ map <S-{> vi{
 map <S-(> vi(
 map <S-[> vi[
 
-map <C-Left> :bp
-map <C-Right> :bn
+"map <C-Left> :bp
+"map <C-Right> :bn
+nnoremap <silent> <C-Right> <c-w>l
+nnoremap <silent> <C-Left> <c-w>h
+nnoremap <silent> <C-Up> <c-w>k
+nnoremap <silent> <C-Down> <c-w>j
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Misc
