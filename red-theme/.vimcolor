@@ -1,3 +1,7 @@
 colorscheme badwolf
 source ~/rmbackground.vim
 
+"let &colorcolumn=join(range(81,999),",")
+highlight ColorColumn ctermbg=233
+"let &colorcolumn="80,".join(range(120,999),",")
+let &colorcolumn="72,80"
