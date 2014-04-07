@@ -5,7 +5,8 @@
 
 # input resolution, currently fullscreen.
 # you can set it manually in the format "WIDTHxHEIGHT" instead.
-#INRES=$(xwininfo -root | awk '/geometry/ {print $2}'i)
+# can be set to root window thusly:
+#    $(xwininfo -root | awk '/geometry/ {print $2}'i)
 INRES=$(cat ~/.twitch_record_resolution)
 
 # output resolution.
@@ -30,10 +31,27 @@ STREAM_KEY=$(cat ~/.twitch_key)
 # justin:"rtmp://live.justin.tv/app/$STREAM_KEY"
 STREAM_URL="rtmp://live.twitch.tv/app/$STREAM_KEY"
 
-avconv \
--f alsa -ac 2 -i "$INAUD" \
--f x11grab -s "$INRES" -r "$FPS" -i :0.0 \
--vcodec libx264 -s "$OUTRES" \
--acodec libmp3lame -threads 6 -qscale 5 -b 64KB \
--f flv -ar 44100 "$STREAM_URL"
+use_libav_nuts() {
+    avconv \
+        -f alsa -ac 2 -i "$INAUD" \
+        -f x11grab -s "$INRES" -r "$FPS" -i :0.0 \
+        -vcodec libx264 -s "$OUTRES" \
+        -acodec libmp3lame -threads 6 -qscale 5 -b 64KB \
+        -f flv -ar 44100 "$STREAM_URL"
+}
+
+use_ffmpeg_ftw() {
+    ffmpeg -loglevel warning \
+        -f x11grab -s "$INRES" -r "$FPS" -i :0.0 \
+        -f alsa -ac 2 -i "$INAUD" \
+        -vcodec libx264 -crf 30 -preset "$QUAL" -s "$OUTRES" \
+        -acodec libmp3lame -ab 96k -ar 44100 -threads 0 -pix_fmt yuv420p \
+        -f flv "$STREAM_URL"
+}
+
+if hash ffmpeg 2>/dev/null; then
+    use_ffmpeg_ftw
+else
+    use_libav_nuts
+fi
 
