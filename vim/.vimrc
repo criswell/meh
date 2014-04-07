@@ -370,8 +370,8 @@ nnoremap <silent> <C-Left> <c-w>h
 nnoremap <silent> <C-Up> <c-w>k
 nnoremap <silent> <C-Down> <c-w>j
 
-map <A-Up> :bn <Enter>
-map <A-Down> :bp <Enter>
+map <A-Down> :bn <Enter>
+map <A-Up> :bp <Enter>
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Misc
