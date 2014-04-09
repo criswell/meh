@@ -9,12 +9,13 @@ urxvt*cursorBlink:      true
 urxvt*cursorColor:      magenta
 urxvt*underlineColor:   #86a2be
 
-!urxvt*cutchars:         `"()'*<>[]{|}
 !A
 !urxvt*font:             xft:Zero Threes:pixelsize=12
 urxvt*font:             xft:DejaVu Sans Mono:pixelsize=12
 urxvt*boldFont:             xft:DejaVu Sans Mono:pixelsize=12
 !urxvt*boldFont:         xft:Terminal:pixelsize=12
+!urxvt*font:             xft:Droid Sans Mono:pixelsize=12
+!urxvt*boldFont:             xft:Droid Sans Mono:pixelsize=12
 
 !URxvt*font: xft:Misc Fixed:pixelsize=14
 !:antialias=true:hinting=true
@@ -48,7 +49,6 @@ urxvt-256color*cursorBlink:      true
 urxvt-256color*cursorColor:      magenta
 urxvt-256color*underlineColor:   #86a2be
 
-!urxvt-256color*cutchars:         `"()'*<>[]{|}
 !A
 urxvt-256color*font:             xft:DejaVu Sans Mono:pixelsize=12
 urxvt-256color*boldFont:         xft:DejaVu Sans Mono:pixelsize=12
