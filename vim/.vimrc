@@ -497,7 +497,7 @@ Bundle 'bling/vim-airline'
 Bundle 'Valloric/YouCompleteMe'
 " NOTE: I'd love to keep syntastic, but it's too cranky when dealing
 " with multiple virtualenvs
-"Bundle 'scrooloose/syntastic'
+Bundle 'scrooloose/syntastic'
 
 "Bundle 'Lokaltog/powerline', {'rtp': '.local/lib/python2.7/site-packages/powerline/bindings/vim/'}
 " git repos on your local machine (ie. when working on your own plugin)
@@ -527,6 +527,7 @@ source ~/.vimcolor
 "source ~/rmbackground.vim
 let g:airline#extensions#tabline#enabled = 1
 let g:ycm_autoclose_preview_window_after_insertion = 1
+let g:syntastic_python_checkers = ['pylint']
 
 autocmd Filetype html setlocal ts=2 sts=2 sw=2
 
