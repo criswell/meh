@@ -23,7 +23,7 @@
 "    -> Keybindings
 "    -> Misc
 "    -> Helper functions
-"    -> Bundles
+"    -> Plugins
 "
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
@@ -463,7 +463,7 @@ endfunction
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" => Bundles
+" => Plugins
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 inoremap <Tab> <C-R>=SuperCleverTab()<cr>
 
@@ -475,33 +475,34 @@ call vundle#rc()
 
 " let Vundle manage Vundle
 " required!
-Bundle 'gmarik/vundle'
+"Plugin 'gmarik/vundle'
+Plugin 'VundleVim/Vundle.vim'
 
-" My Bundles here:
+" My Plugins here:
 "
 " original repos on github
-Bundle 'tpope/vim-fugitive'
-Bundle 'Lokaltog/vim-easymotion'
-Bundle 'rstacruz/sparkup', {'rtp': 'vim/'}
-Bundle 'tpope/vim-rails.git'
+Plugin 'tpope/vim-fugitive'
+Plugin 'Lokaltog/vim-easymotion'
+Plugin 'rstacruz/sparkup', {'rtp': 'vim/'}
+Plugin 'tpope/vim-rails.git'
 " vim-scripts repos
-Bundle 'L9'
-Bundle 'FuzzyFinder'
+Plugin 'L9'
+Plugin 'FuzzyFinder'
 " non github repos
-Bundle 'git://git.wincent.com/command-t.git'
-"Bundle 'statline'
-"Bundle 'wakatime/vim-wakatime'
-Bundle 'flazz/vim-colorschemes'
-Bundle 'neocomplcache'
-Bundle 'bling/vim-airline'
-Bundle 'Valloric/YouCompleteMe'
+Plugin 'git://git.wincent.com/command-t.git'
+"Plugin 'statline'
+"Plugin 'wakatime/vim-wakatime'
+Plugin 'flazz/vim-colorschemes'
+Plugin 'neocomplcache'
+Plugin 'bling/vim-airline'
+Plugin 'Valloric/YouCompleteMe'
 " NOTE: I'd love to keep syntastic, but it's too cranky when dealing
 " with multiple virtualenvs
-Bundle 'scrooloose/syntastic'
+Plugin 'scrooloose/syntastic'
 
-"Bundle 'Lokaltog/powerline', {'rtp': '.local/lib/python2.7/site-packages/powerline/bindings/vim/'}
+"Plugin 'Lokaltog/powerline', {'rtp': '.local/lib/python2.7/site-packages/powerline/bindings/vim/'}
 " git repos on your local machine (ie. when working on your own plugin)
-"Bundle 'file:///Users/gmarik/path/to/plugin'
+"Plugin 'file:///Users/gmarik/path/to/plugin'
 " ...
 
 filetype plugin indent on     " required!
@@ -513,7 +514,7 @@ filetype plugin indent on     " required!
 " :BundleClean(!)      - confirm(or auto-approve) removal of unused bundles
 "
 " see :h vundle for more details or wiki for FAQ
-" NOTE: comments after Bundle command are not allowed..
+" NOTE: comments after Plugin command are not allowed..
 
 "colorscheme jellybeans
 "colorscheme redstring
@@ -532,5 +533,7 @@ let g:syntastic_javascript_checkers = ['closurecompiler']
 let g:syntastic_javascript_closurecompiler_path = '/usr/share/java/closure-compiler/closure-compiler.jar'
 
 autocmd Filetype html setlocal ts=2 sts=2 sw=2
+autocmd Filetype sh setlocal ts=2 sts=2 sw=2
 autocmd Filetype javascript setlocal ts=2 sts=2 sw=2
-
+autocmd Filetype ruby setlocal ts=2 sts=2 sw=2
+filetype indent on
