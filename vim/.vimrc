@@ -499,6 +499,8 @@ Plugin 'Valloric/YouCompleteMe'
 " NOTE: I'd love to keep syntastic, but it's too cranky when dealing
 " with multiple virtualenvs
 Plugin 'scrooloose/syntastic'
+" Drink the ctrlp koolaid
+Plugin 'ctrlpvim/ctrlp.vim'
 
 "Plugin 'Lokaltog/powerline', {'rtp': '.local/lib/python2.7/site-packages/powerline/bindings/vim/'}
 " git repos on your local machine (ie. when working on your own plugin)
