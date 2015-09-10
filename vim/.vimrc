@@ -482,7 +482,7 @@ Plugin 'VundleVim/Vundle.vim'
 "
 " original repos on github
 Plugin 'tpope/vim-fugitive'
-Plugin 'Lokaltog/vim-easymotion'
+Plugin 'easymotion/vim-easymotion'
 Plugin 'rstacruz/sparkup', {'rtp': 'vim/'}
 Plugin 'tpope/vim-rails.git'
 " vim-scripts repos
