@@ -501,6 +501,8 @@ Plugin 'Valloric/YouCompleteMe'
 Plugin 'scrooloose/syntastic'
 " Drink the ctrlp koolaid
 Plugin 'ctrlpvim/ctrlp.vim'
+" Try out vim-multiple-cursors
+Plugin 'terryma/vim-multiple-cursors'
 
 "Plugin 'Lokaltog/powerline', {'rtp': '.local/lib/python2.7/site-packages/powerline/bindings/vim/'}
 " git repos on your local machine (ie. when working on your own plugin)
