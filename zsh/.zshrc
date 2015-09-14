@@ -111,3 +111,5 @@ bindkey "^[[B" down-line-or-beginning-search # Down
 if [ -d "$HOME/.local/bin" ]; then
     export PATH="$PATH:$HOME/.local/bin"
 fi
+
+stty -ixon
