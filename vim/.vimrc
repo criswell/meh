@@ -344,7 +344,7 @@ map <leader>s? z=
 map <C-a> GVgg
 map <C-n> :enew
 map <C-o> :e . <Enter>
-map <C-s> :w <Enter>
+"map <C-s> :w <Enter>
 map <C-c> y
 "map <C-v> p
 map <C-x> d
@@ -503,6 +503,12 @@ Plugin 'scrooloose/syntastic'
 Plugin 'ctrlpvim/ctrlp.vim'
 " Try out vim-multiple-cursors
 Plugin 'terryma/vim-multiple-cursors'
+let g:multi_cursor_use_default_mapping=0
+let g:multi_cursor_next_key='<C-s>'
+let g:multi_cursor_prev_key='<C-p>'
+let g:multi_cursor_skip_key='<C-x>'
+let g:multi_cursor_quit_key='<Esc>'
+let g:multi_cursor_start_key='<C-s>'
 
 "Plugin 'Lokaltog/powerline', {'rtp': '.local/lib/python2.7/site-packages/powerline/bindings/vim/'}
 " git repos on your local machine (ie. when working on your own plugin)
