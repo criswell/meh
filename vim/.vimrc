@@ -501,6 +501,7 @@ Plugin 'Valloric/YouCompleteMe'
 Plugin 'scrooloose/syntastic'
 " Drink the ctrlp koolaid
 Plugin 'ctrlpvim/ctrlp.vim'
+let g:ctrlp_cmd = 'CtrlPBuffer'
 " Try out vim-multiple-cursors
 Plugin 'terryma/vim-multiple-cursors'
 let g:multi_cursor_use_default_mapping=0
