@@ -112,4 +112,8 @@ if [ -d "$HOME/.local/bin" ]; then
     export PATH="$PATH:$HOME/.local/bin"
 fi
 
+if [ -f ~/.aliases ]; then
+    source ~/.aliases
+fi
+
 stty -ixon
