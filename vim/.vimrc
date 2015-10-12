@@ -545,6 +545,7 @@ let g:syntastic_javascript_checkers = ['closurecompiler']
 let g:syntastic_javascript_closurecompiler_path = '/usr/share/java/closure-compiler/closure-compiler.jar'
 
 autocmd Filetype html setlocal ts=2 sts=2 sw=2
+autocmd Filetype css setlocal ts=2 sts=2 sw=2
 autocmd Filetype sh setlocal ts=2 sts=2 sw=2
 autocmd Filetype javascript setlocal ts=2 sts=2 sw=2
 autocmd Filetype ruby setlocal ts=2 sts=2 sw=2
