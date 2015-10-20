@@ -485,7 +485,7 @@ Plugin 'VundleVim/Vundle.vim'
 Plugin 'tpope/vim-fugitive'
 Plugin 'easymotion/vim-easymotion'
 Plugin 'rstacruz/sparkup', {'rtp': 'vim/'}
-Plugin 'tpope/vim-rails.git'
+"Plugin 'tpope/vim-rails.git'
 " vim-scripts repos
 Plugin 'L9'
 Plugin 'FuzzyFinder'
@@ -503,6 +503,7 @@ Plugin 'scrooloose/syntastic'
 " Drink the ctrlp koolaid
 Plugin 'ctrlpvim/ctrlp.vim'
 let g:ctrlp_cmd = 'CtrlPBuffer'
+let g:ctrlp_switch_buffer = 0
 " Try out vim-multiple-cursors
 Plugin 'terryma/vim-multiple-cursors'
 let g:multi_cursor_use_default_mapping=0
@@ -544,9 +545,11 @@ let g:syntastic_python_checkers = ['pylint']
 let g:syntastic_javascript_checkers = ['closurecompiler']
 let g:syntastic_javascript_closurecompiler_path = '/usr/share/java/closure-compiler/closure-compiler.jar'
 
+" Indentations
 autocmd Filetype html setlocal ts=2 sts=2 sw=2
 autocmd Filetype css setlocal ts=2 sts=2 sw=2
 autocmd Filetype sh setlocal ts=2 sts=2 sw=2
 autocmd Filetype javascript setlocal ts=2 sts=2 sw=2
 autocmd Filetype ruby setlocal ts=2 sts=2 sw=2
 filetype indent on
+set indentexpr=HtmlIndentGet(v:lnum)
