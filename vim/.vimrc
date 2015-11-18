@@ -512,6 +512,8 @@ let g:multi_cursor_prev_key='<C-p>'
 let g:multi_cursor_skip_key='<C-x>'
 let g:multi_cursor_quit_key='<Esc>'
 let g:multi_cursor_start_key='<C-s>'
+" Bleh, scala
+Plugin 'derekwyatt/vim-scala'
 
 "Plugin 'Lokaltog/powerline', {'rtp': '.local/lib/python2.7/site-packages/powerline/bindings/vim/'}
 " git repos on your local machine (ie. when working on your own plugin)
