@@ -1,7 +1,7 @@
 SAM'S DOTFILES AND CONFIGS
 ==========================
 
-Uses GNU Stow to manage dotfiles and configs. Clone into home directrory
+Uses GNU Stow to manage dotfiles and configs. Clone into home directory
 and stow various things.
 
 Copyright

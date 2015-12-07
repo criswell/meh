@@ -554,5 +554,7 @@ autocmd Filetype sh setlocal ts=2 sts=2 sw=2
 autocmd Filetype javascript setlocal ts=2 sts=2 sw=2
 autocmd Filetype json setlocal ts=2 sts=2 sw=2
 autocmd Filetype ruby setlocal ts=2 sts=2 sw=2
+autocmd BufRead *.txt setlocal spell
+autocmd FileType markdown setlocal spell
 filetype indent on
 set indentexpr=HtmlIndentGet(v:lnum)
