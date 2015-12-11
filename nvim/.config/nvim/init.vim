@@ -471,8 +471,17 @@ inoremap <Tab> <C-R>=SuperCleverTab()<cr>
 set nocompatible               " be iMproved
 filetype off                   " required!
 
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#rc()
+try
+    set rtp+=~/.config/nvim/bundle/Vundle.vim
+    call vundle#rc()
+catch
+    echom "No Vundle!!!"
+    echom "Assuming fresh install, cloning Vundle..."
+    execute "!git clone https://github.com/VundleVim/Vundle.vim.git ~/.config/nvim/bundle/Vundle.vim"
+    set rtp+=~/.config/nvim/bundle/Vundle.vim
+    call vundle#rc()
+    echom "Be sure to do a BundleInstall!"
+endtry
 
 " let Vundle manage Vundle
 " required!
