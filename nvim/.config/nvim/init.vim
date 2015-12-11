@@ -473,13 +473,13 @@ filetype off                   " required!
 
 try
     set rtp+=~/.config/nvim/bundle/Vundle.vim
-    call vundle#rc()
+    call vundle#begin()
 catch
     echom "No Vundle!!!"
     echom "Assuming fresh install, cloning Vundle..."
     execute "!git clone https://github.com/VundleVim/Vundle.vim.git ~/.config/nvim/bundle/Vundle.vim"
     set rtp+=~/.config/nvim/bundle/Vundle.vim
-    call vundle#rc()
+    call vundle#begin()
     echom "Be sure to do a BundleInstall!"
 endtry
 
