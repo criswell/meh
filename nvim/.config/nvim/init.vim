@@ -1,6 +1,6 @@
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Sam's vimrc
-""""""""""""""
+" Sam's revised neovim vimrc
+""""""""""""""""""""""""""""
 " Cobbled together from various bits around the interwebs.
 " Heavily modified.
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -24,6 +24,7 @@
 "    -> Misc
 "    -> Helper functions
 "    -> Plugins
+"    -> Indentations
 "
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
@@ -31,6 +32,14 @@
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => General
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+" Set our editor's config location
+if has('nvim')
+    let s:editor_root=expand("~/.config/nvim")
+else
+    let s:editor_root=expand("~/.vim")
+endif
+
 " Sets how many lines of history VIM has to remember
 set history=700
 
@@ -96,6 +105,7 @@ set magic
 
 " Show matching brackets when text indicator is over them
 set showmatch
+
 " How many tenths of a second to blink when matching brackets
 set mat=2
 
@@ -471,15 +481,17 @@ inoremap <Tab> <C-R>=SuperCleverTab()<cr>
 set nocompatible               " be iMproved
 filetype off                   " required!
 
+let &rtp = &rtp . ',' . s:editor_root . '/bundle/Vundle.vim'
+
 try
-    set rtp+=~/.config/nvim/bundle/Vundle.vim
-    call vundle#begin()
+    call vundle#rc(s:editor_root . '/bundle')
 catch
     echom "No Vundle!!!"
     echom "Assuming fresh install, cloning Vundle..."
-    execute "!git clone https://github.com/VundleVim/Vundle.vim.git ~/.config/nvim/bundle/Vundle.vim"
-    set rtp+=~/.config/nvim/bundle/Vundle.vim
-    call vundle#begin()
+    echom ""
+    silent call mkdir(s:editor_root . '/bundle', "p")
+    silent execute "!git clone https://github.com/gmarik/vundle " . s:editor_root . "/bundle/Vundle.vim"
+    call vundle#rc(s:editor_root . '/bundle')
     echom "Be sure to do a BundleInstall!"
 endtry
 
@@ -556,7 +568,11 @@ let g:syntastic_python_checkers = ['pylint']
 let g:syntastic_javascript_checkers = ['closurecompiler']
 let g:syntastic_javascript_closurecompiler_path = '/usr/share/java/closure-compiler/closure-compiler.jar'
 
-" Indentations
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => Indentations
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
 autocmd Filetype html setlocal ts=2 sts=2 sw=2
 autocmd Filetype css setlocal ts=2 sts=2 sw=2
 autocmd Filetype sh setlocal ts=2 sts=2 sw=2
