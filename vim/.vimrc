@@ -514,6 +514,13 @@ let g:multi_cursor_quit_key='<Esc>'
 let g:multi_cursor_start_key='<C-s>'
 " Bleh, scala
 Plugin 'derekwyatt/vim-scala'
+" Writing tools
+Plugin 'reedes/vim-pencil'
+let g:airline_section_x = '%{PencilMode()}'
+let g:pencil#mode_indicators = {'hard': 'H', 'auto': 'A', 'soft': 'S', 'off': '',}
+Plugin 'Zuckonit/vim-airline-tomato'
+let g:tomato#show_clock = 1
+let g:tomato#show_count_down = 1
 
 "Plugin 'Lokaltog/powerline', {'rtp': '.local/lib/python2.7/site-packages/powerline/bindings/vim/'}
 " git repos on your local machine (ie. when working on your own plugin)
@@ -554,7 +561,9 @@ autocmd Filetype sh setlocal ts=2 sts=2 sw=2
 autocmd Filetype javascript setlocal ts=2 sts=2 sw=2
 autocmd Filetype json setlocal ts=2 sts=2 sw=2
 autocmd Filetype ruby setlocal ts=2 sts=2 sw=2
-autocmd BufRead *.txt setlocal spell
-autocmd FileType markdown setlocal spell
+autocmd BufRead *.txt call pencil#init({'wrap': 'hard', 'textwidth': 74, 'autoformat': 0})
+                \| setlocal spell
+autocmd FileType markdown call pencil#init({'wrap': 'hard', 'textwidth': 74, 'autoformat': 0})
+                \| setlocal spell
 filetype indent on
 set indentexpr=HtmlIndentGet(v:lnum)

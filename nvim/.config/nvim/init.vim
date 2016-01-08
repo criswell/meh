@@ -354,7 +354,7 @@ map <leader>s? z=
 
 map <C-a> GVgg
 map <C-n> :enew
-map <C-o> :e . <Enter>
+map <C-o> :NERDTreeToggle <Enter>
 "map <C-s> :w <Enter>
 map <C-c> y
 "map <C-v> p
@@ -481,52 +481,69 @@ inoremap <Tab> <C-R>=SuperCleverTab()<cr>
 set nocompatible               " be iMproved
 filetype off                   " required!
 
-let &rtp = &rtp . ',' . s:editor_root . '/bundle/Vundle.vim'
-
-try
-    call vundle#rc(s:editor_root . '/bundle')
-catch
-    echom "No Vundle!!!"
-    echom "Assuming fresh install, cloning Vundle..."
-    echom ""
-    silent call mkdir(s:editor_root . '/bundle', "p")
-    silent execute "!git clone https://github.com/gmarik/vundle " . s:editor_root . "/bundle/Vundle.vim"
-    call vundle#rc(s:editor_root . '/bundle')
-    echom "Be sure to do a BundleInstall!"
-endtry
+"let &rtp = &rtp . ',' . s:editor_root . '/bundle/Vundle.vim'
+"
+"try
+"    call vundle#rc(s:editor_root . '/bundle')
+"catch
+"    echom "No Vundle!!!"
+"    echom "Assuming fresh install, cloning Vundle..."
+"    echom ""
+"    silent call mkdir(s:editor_root . '/bundle', "p")
+"    silent execute "!git clone https://github.com/gmarik/vundle " . s:editor_root . "/bundle/Vundle.vim"
+"    call vundle#rc(s:editor_root . '/bundle')
+"    echom "Be sure to do a BundleInstall!"
+"endtry
 
 " let Vundle manage Vundle
 " required!
 "Plugin 'gmarik/vundle'
-Plugin 'VundleVim/Vundle.vim'
+"Plugin 'VundleVim/Vundle.vim'
+
+if empty(glob('~/.config/nvim/autoload/plug.vim'))
+  silent !curl -fLo ~/.config/nvim/autoload/plug.vim --create-dirs
+    \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+  autocmd VimEnter * PlugInstall | source $MYVIMRC
+endif
+
+call plug#begin('~/.config/nvim/plugged')
 
 " My Plugins here:
 "
 " original repos on github
-Plugin 'tpope/vim-fugitive'
-Plugin 'easymotion/vim-easymotion'
-Plugin 'rstacruz/sparkup', {'rtp': 'vim/'}
-"Plugin 'tpope/vim-rails.git'
+Plug 'tpope/vim-fugitive'
+Plug 'easymotion/vim-easymotion'
+Plug 'rstacruz/sparkup', {'rtp': 'vim/'}
+"Plug 'tpope/vim-rails.git'
 " vim-scripts repos
-Plugin 'L9'
-Plugin 'FuzzyFinder'
+Plug 'L9'
+Plug 'FuzzyFinder'
 " non github repos
-Plugin 'git://git.wincent.com/command-t.git'
-"Plugin 'statline'
-"Plugin 'wakatime/vim-wakatime'
-Plugin 'flazz/vim-colorschemes'
-Plugin 'neocomplcache'
-Plugin 'bling/vim-airline'
-Plugin 'Valloric/YouCompleteMe'
+Plug 'git://git.wincent.com/command-t.git'
+"Plug 'statline'
+"Plug 'wakatime/vim-wakatime'
+Plug 'flazz/vim-colorschemes'
+Plug 'neocomplcache'
+Plug 'bling/vim-airline'
+Plug 'Valloric/YouCompleteMe'
 " NOTE: I'd love to keep syntastic, but it's too cranky when dealing
 " with multiple virtualenvs
-Plugin 'scrooloose/syntastic'
+Plug 'scrooloose/syntastic'
+" Nerdtree
+Plug 'scrooloose/nerdtree'
+Plug 'Xuyuanp/nerdtree-git-plugin'
+"autocmd vimenter * NERDTree
+"autocmd StdinReadPre * let s:std_in=1
+"autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
+let g:NERDTreeShowHidden=1
+let g:NERDTreeMouseMode=3
 " Drink the ctrlp koolaid
-Plugin 'ctrlpvim/ctrlp.vim'
+Plug 'ctrlpvim/ctrlp.vim'
 let g:ctrlp_cmd = 'CtrlPBuffer'
 let g:ctrlp_switch_buffer = 0
 " Try out vim-multiple-cursors
-Plugin 'terryma/vim-multiple-cursors'
+Plug 'terryma/vim-multiple-cursors'
 let g:multi_cursor_use_default_mapping=0
 let g:multi_cursor_next_key='<C-s>'
 let g:multi_cursor_prev_key='<C-p>'
@@ -534,9 +551,18 @@ let g:multi_cursor_skip_key='<C-x>'
 let g:multi_cursor_quit_key='<Esc>'
 let g:multi_cursor_start_key='<C-s>'
 " Bleh, scala
-Plugin 'derekwyatt/vim-scala'
+Plug 'derekwyatt/vim-scala'
+" Writing tools
+Plug 'reedes/vim-pencil'
+let g:airline_section_x = '%{PencilMode()}'
+let g:pencil#mode_indicators = {'hard': 'H', 'auto': 'A', 'soft': 'S', 'off': '',}
+Plug 'Zuckonit/vim-airline-tomato'
+let g:tomato#show_clock = 1
+let g:tomato#show_count_down = 1
 
-"Plugin 'Lokaltog/powerline', {'rtp': '.local/lib/python2.7/site-packages/powerline/bindings/vim/'}
+call plug#end()
+
+"Plug 'Lokaltog/powerline', {'rtp': '.local/lib/python2.7/site-packages/powerline/bindings/vim/'}
 " git repos on your local machine (ie. when working on your own plugin)
 "Plugin 'file:///Users/gmarik/path/to/plugin'
 " ...
@@ -579,7 +605,9 @@ autocmd Filetype sh setlocal ts=2 sts=2 sw=2
 autocmd Filetype javascript setlocal ts=2 sts=2 sw=2
 autocmd Filetype json setlocal ts=2 sts=2 sw=2
 autocmd Filetype ruby setlocal ts=2 sts=2 sw=2
-autocmd BufRead *.txt setlocal spell
-autocmd FileType markdown setlocal spell
+autocmd BufRead *.txt call pencil#init({'wrap': 'hard', 'textwidth': 74, 'autoformat': 0})
+                \| setlocal spell
+autocmd FileType markdown call pencil#init({'wrap': 'hard', 'textwidth': 74, 'autoformat': 0})
+                \| setlocal spell
 filetype indent on
 set indentexpr=HtmlIndentGet(v:lnum)
