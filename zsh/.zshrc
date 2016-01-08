@@ -133,3 +133,5 @@ if [ -x "$highlight_filter" ]; then
 else
     export LESS=' -N '
 fi
+
+export MANPAGER='less -n'
