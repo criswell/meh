@@ -135,3 +135,7 @@ else
 fi
 
 export MANPAGER='less -n'
+
+if hash fuck 2>/dev/null; then
+    eval $(thefuck --alias)
+fi
