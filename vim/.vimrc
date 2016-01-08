@@ -518,6 +518,9 @@ Plugin 'derekwyatt/vim-scala'
 Plugin 'reedes/vim-pencil'
 let g:airline_section_x = '%{PencilMode()}'
 let g:pencil#mode_indicators = {'hard': 'H', 'auto': 'A', 'soft': 'S', 'off': '',}
+Plugin 'Zuckonit/vim-airline-tomato'
+let g:tomato#show_clock = 1
+let g:tomato#show_count_down = 1
 
 "Plugin 'Lokaltog/powerline', {'rtp': '.local/lib/python2.7/site-packages/powerline/bindings/vim/'}
 " git repos on your local machine (ie. when working on your own plugin)
