@@ -102,18 +102,28 @@ if (( ${+terminfo[smkx]} )) && (( ${+terminfo[rmkx]} )); then
     zle -N zle-line-finish
 fi
 
+#autoload -U up-line-or-beginning-search
+#autoload -U down-line-or-beginning-search
+#zle -N up-line-or-beginning-search
+#zle -N down-line-or-beginning-search
+#bindkey "^[[A" up-line-or-beginning-search # Up
+#bindkey "^[[B" down-line-or-beginning-search # Down
+#autoload -U history-beginning-search-backward
+#autoload -U history-beginning-search-forward
+#zle -N history-beginning-search-backward
+#zle -N history-beginning-search-forward
+#bindkey "^[[A" history-beginning-search-backward # Up
+#bindkey "^[[B" history-beginning-search-forward # Down
+
 autoload -U up-line-or-beginning-search
 autoload -U down-line-or-beginning-search
 zle -N up-line-or-beginning-search
 zle -N down-line-or-beginning-search
-#bindkey "^[[A" up-line-or-beginning-search # Up
-#bindkey "^[[B" down-line-or-beginning-search # Down
-autoload -U history-beginning-search-backward
-autoload -U history-beginning-search-forward
-zle -N history-beginning-search-backward
-zle -N history-beginning-search-forward
-bindkey "^[[A" history-beginning-search-backward # Up
-bindkey "^[[B" history-beginning-search-forward # Down
+#bindkey "^[0A" up-line-or-beginning-search # Up
+#bindkey "^[0B" down-line-or-beginning-search # Down
+# keybindings for history autocomplete
+[[ -n "${key[Up]}" ]] && bindkey "${key[Up]}" up-line-or-beginning-search 
+[[ -n "${key[Down]}" ]] && bindkey "${key[Down]}" down-line-or-beginning-search
 
 if [ -d "$HOME/.local/bin" ]; then
     export PATH="$PATH:$HOME/.local/bin"
