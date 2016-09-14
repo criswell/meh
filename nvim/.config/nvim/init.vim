@@ -154,9 +154,9 @@ set ffs=unix,dos,mac
 " => Files, backups and undo
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Turn backup off, since most stuff is in SVN, git et.c anyway...
+" Yeah, fuck that noise... we want swap files
 set nobackup
 set nowb
-set noswapfile
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -556,9 +556,9 @@ Plug 'derekwyatt/vim-scala'
 Plug 'reedes/vim-pencil'
 let g:airline_section_x = '%{PencilMode()}'
 let g:pencil#mode_indicators = {'hard': 'H', 'auto': 'A', 'soft': 'S', 'off': '',}
-Plug 'Zuckonit/vim-airline-tomato'
-let g:tomato#show_clock = 1
-let g:tomato#show_count_down = 1
+"Plug 'Zuckonit/vim-airline-tomato'
+"let g:tomato#show_clock = 1
+"let g:tomato#show_count_down = 1
 
 call plug#end()
 
