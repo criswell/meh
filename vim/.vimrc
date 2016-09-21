@@ -499,6 +499,16 @@ Plugin 'Valloric/YouCompleteMe'
 " NOTE: I'd love to keep syntastic, but it's too cranky when dealing
 " with multiple virtualenvs
 Plugin 'scrooloose/syntastic'
+" Nerdtree
+Plugin 'scrooloose/nerdtree'
+Plugin 'Xuyuanp/nerdtree-git-plugin'
+"autocmd vimenter * NERDTree
+"autocmd StdinReadPre * let s:std_in=1
+"autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
+let g:NERDTreeShowHidden=1
+let g:NERDTreeMouseMode=3
+"
 " Drink the ctrlp koolaid
 Plugin 'ctrlpvim/ctrlp.vim'
 let g:ctrlp_cmd = 'CtrlPBuffer'
@@ -517,9 +527,9 @@ Plugin 'derekwyatt/vim-scala'
 Plugin 'reedes/vim-pencil'
 let g:airline_section_x = '%{PencilMode()}'
 let g:pencil#mode_indicators = {'hard': 'H', 'auto': 'A', 'soft': 'S', 'off': '',}
-Plugin 'Zuckonit/vim-airline-tomato'
-let g:tomato#show_clock = 1
-let g:tomato#show_count_down = 1
+"Plugin 'Zuckonit/vim-airline-tomato'
+"let g:tomato#show_clock = 1
+"let g:tomato#show_count_down = 1
 
 "Plugin 'Lokaltog/powerline', {'rtp': '.local/lib/python2.7/site-packages/powerline/bindings/vim/'}
 " git repos on your local machine (ie. when working on your own plugin)
