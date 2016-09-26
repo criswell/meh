@@ -129,6 +129,14 @@ if [ -d "$HOME/.local/bin" ]; then
     export PATH="$PATH:$HOME/.local/bin"
 fi
 
+if [ -d "$HOME/bin" ]; then
+    export PATH="$PATH:$HOME/bin"
+fi
+
+if [ -d "$HOME/lib/rose" ]; then
+    export ROSELIB_PATH="$HOME/lib/rose"
+fi
+
 if [ -f ~/.aliases ]; then
     source ~/.aliases
 fi
@@ -147,7 +155,7 @@ if [ -x "$highlight_filter" ]; then
     export LESSOPEN="| ${highlight_filter} %s"
     export LESS=' -N -R '
 else
-    export LESS=' -N '
+    export LESS=' -N -R'
 fi
 
 export MANPAGER='less -n'
