@@ -108,8 +108,11 @@ zle -N up-line-or-beginning-search
 zle -N down-line-or-beginning-search
 #bindkey "^[OA" up-line-or-beginning-search # Up
 #bindkey "^[OB" down-line-or-beginning-search # Down
-bindkey "^[[A" up-line-or-beginning-search # Up
-bindkey "^[[B" down-line-or-beginning-search # Down
+#bindkey "^[[A" up-line-or-beginning-search # Up
+#bindkey "^[[B" down-line-or-beginning-search # Down
+# keybindings for history autocomplete
+[[ -n "${key[Up]}" ]] && bindkey "${key[Up]}" up-line-or-beginning-search 
+[[ -n "${key[Down]}" ]] && bindkey "${key[Down]}" down-line-or-beginning-search
 
 if [ -d "$HOME/.local/bin" ]; then
     export PATH="$PATH:$HOME/.local/bin"
