@@ -163,6 +163,10 @@ else
     export LESS=' -N -R'
 fi
 
+if [ -e "$HOME/.env_exports" ]; then
+    source ~/.env_exports
+fi
+
 export MANPAGER='less -n'
 
 if hash fuck 2>/dev/null; then
