@@ -133,6 +133,11 @@ if [ -d "$HOME/bin" ]; then
     export PATH="$PATH:$HOME/bin"
 fi
 
+# For Mac OS X
+if [ -d "$HOME/Library/Python/2.7/bin" ]; then
+    export PATH="$PATH:$HOME/Library/Python/2.7/bin"
+fi
+
 if [ -d "$HOME/lib/rose" ]; then
     export ROSELIB_PATH="$HOME/lib/rose"
 fi
@@ -156,6 +161,10 @@ if [ -x "$highlight_filter" ]; then
     export LESS=' -N -R '
 else
     export LESS=' -N -R'
+fi
+
+if [ -e "$HOME/.env_exports" ]; then
+    source ~/.env_exports
 fi
 
 export MANPAGER='less -n'
