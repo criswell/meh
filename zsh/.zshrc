@@ -152,3 +152,5 @@ export MANPAGER='less -n'
 if hash fuck 2>/dev/null; then
     eval $(thefuck --alias)
 fi
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
