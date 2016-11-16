@@ -8,7 +8,6 @@
 "colorscheme up
 colorscheme burnttoast256
 "colorscheme zephyr
-"source ~/rmbackground.vim
 
 let &colorcolumn=join(range(81,999),",")
 highlight ColorColumn ctermbg=233
