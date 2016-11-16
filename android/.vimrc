@@ -481,25 +481,6 @@ inoremap <Tab> <C-R>=SuperCleverTab()<cr>
 set nocompatible               " be iMproved
 filetype off                   " required!
 
-"let &rtp = &rtp . ',' . s:editor_root . '/bundle/Vundle.vim'
-"
-"try
-"    call vundle#rc(s:editor_root . '/bundle')
-"catch
-"    echom "No Vundle!!!"
-"    echom "Assuming fresh install, cloning Vundle..."
-"    echom ""
-"    silent call mkdir(s:editor_root . '/bundle', "p")
-"    silent execute "!git clone https://github.com/gmarik/vundle " . s:editor_root . "/bundle/Vundle.vim"
-"    call vundle#rc(s:editor_root . '/bundle')
-"    echom "Be sure to do a BundleInstall!"
-"endtry
-
-" let Vundle manage Vundle
-" required!
-"Plugin 'gmarik/vundle'
-"Plugin 'VundleVim/Vundle.vim'
-
 call plug#begin('~/.config/nvim/plugged')
 
 " My Plugins here:
