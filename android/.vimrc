@@ -69,6 +69,9 @@ set so=7
 " Turn on the WiLd menu
 set wildmenu
 
+" On android, I think we'll only ever care about ASCIIDOC and text files
+set spell
+
 " Ignore compiled files
 set wildignore=*.o,*~,*.pyc
 
@@ -582,5 +585,4 @@ autocmd BufRead *.txt call pencil#init({'wrap': 'hard', 'textwidth': 74, 'autofo
 autocmd FileType markdown call pencil#init({'wrap': 'hard', 'textwidth': 74, 'autoformat': 0})
                 \| setlocal spell
 filetype indent on
-autocmd FileType *.asc setlocal spell
 set indentexpr=HtmlIndentGet(v:lnum)
