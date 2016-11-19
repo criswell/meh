@@ -69,6 +69,9 @@ set so=7
 " Turn on the WiLd menu
 set wildmenu
 
+" On android, I think we'll only ever care about ASCIIDOC and text files
+set spell
+
 " Ignore compiled files
 set wildignore=*.o,*~,*.pyc
 
