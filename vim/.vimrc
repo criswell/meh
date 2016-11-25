@@ -574,5 +574,6 @@ autocmd BufRead *.txt call pencil#init({'wrap': 'hard', 'textwidth': 74, 'autofo
                 \| setlocal spell
 autocmd FileType markdown call pencil#init({'wrap': 'hard', 'textwidth': 74, 'autoformat': 0})
                 \| setlocal spell
+autocmd BufRead *.asc setlocal spell
 filetype indent on
 set indentexpr=HtmlIndentGet(v:lnum)
