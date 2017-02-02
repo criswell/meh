@@ -129,6 +129,10 @@ if [ -d "$HOME/.local/bin" ]; then
     export PATH="$PATH:$HOME/.local/bin"
 fi
 
+if [ -d "$HOME/.cargo/bin" ]; then
+    export PATH="$PATH:$HOME/.cargo/bin"
+fi
+
 if [ -d "$HOME/bin" ]; then
     export PATH="$PATH:$HOME/bin"
 fi
@@ -172,3 +176,5 @@ export MANPAGER='less -n'
 if hash fuck 2>/dev/null; then
     eval $(thefuck --alias)
 fi
+
+function npm-do { (PATH=$(npm bin):$PATH; eval $@;) }
