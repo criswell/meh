@@ -1,0 +1,15 @@
+"colorscheme devbox-dark-256
+"colorscheme lilydjwg_dark
+"colorscheme lilypink
+"colorscheme lucius
+"colorscheme made_of_code
+"colorscheme symfony
+"colorscheme tabula
+"colorscheme up
+colorscheme burnttoast256
+"colorscheme zephyr
+
+let &colorcolumn=join(range(81,999),",")
+highlight ColorColumn ctermbg=233
+let &colorcolumn="80,".join(range(120,999),",")
+hi Normal ctermbg=none

@@ -44,6 +44,7 @@ DISABLE_CORRECTION="true"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 plugins=(git mercurial)
+plugins=(zsh-autosuggestions)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -129,6 +130,10 @@ if [ -d "$HOME/.local/bin" ]; then
     export PATH="$PATH:$HOME/.local/bin"
 fi
 
+if [ -d "$HOME/.cargo/bin" ]; then
+    export PATH="$PATH:$HOME/.cargo/bin"
+fi
+
 if [ -d "$HOME/bin" ]; then
     export PATH="$PATH:$HOME/bin"
 fi
@@ -172,3 +177,5 @@ export MANPAGER='less -n'
 if hash fuck 2>/dev/null; then
     eval $(thefuck --alias)
 fi
+
+function npm-do { (PATH=$(npm bin):$PATH; eval $@;) }
