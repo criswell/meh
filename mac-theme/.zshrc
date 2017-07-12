@@ -148,7 +148,7 @@ if [ -d "$HOME/lib/rose" ]; then
 fi
 
 if [ -d "$HOME/lib/cq" ]; then
-    export ROSELIB_PATH="$HOME/lib/cq"
+    export CQLIB_PATH="$HOME/lib/cq"
 fi
 
 if [ -f ~/.aliases ]; then
