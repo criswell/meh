@@ -130,6 +130,10 @@ if [ -d "$HOME/.local/bin" ]; then
     export PATH="$PATH:$HOME/.local/bin"
 fi
 
+if [ -d "$HOME/work/git-plugins/bin" ] ; then
+    export PATH="$PATH:$HOME/work/git-plugins/bin"
+fi
+
 if [ -d "$HOME/.cargo/bin" ]; then
     export PATH="$PATH:$HOME/.cargo/bin"
 fi
