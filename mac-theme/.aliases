@@ -1,1 +1,3 @@
 alias docker-clean='docker rm -v $(docker ps -a -q -f status=exited)'
+#alias ls='exa --group-directories-first'
+alias ls='exa'
