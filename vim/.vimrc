@@ -343,7 +343,7 @@ map <leader>s? z=
 
 map <C-a> GVgg
 map <C-n> :enew
-map <C-o> :e . <Enter>
+"map <C-o> :e . <Enter>
 "map <C-s> :w <Enter>
 map <C-c> y
 "map <C-v> p
@@ -508,6 +508,7 @@ Plugin 'Xuyuanp/nerdtree-git-plugin'
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 let g:NERDTreeShowHidden=1
 let g:NERDTreeMouseMode=3
+map <C-o> :NERDTreeToggle <Enter>
 "
 " Drink the ctrlp koolaid
 Plugin 'ctrlpvim/ctrlp.vim'
