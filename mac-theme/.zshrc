@@ -186,7 +186,7 @@ if hash fuck 2>/dev/null; then
     eval $(thefuck --alias)
 fi
 
-export NVM_DIR="$HOME/.nvm"
-. "/usr/local/opt/nvm/nvm.sh"
+#export NVM_DIR="$HOME/.nvm"
+#. "/usr/local/opt/nvm/nvm.sh"
 
 function npm-do { (PATH=$(npm bin):$PATH; eval $@;) }
