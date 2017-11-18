@@ -49,7 +49,7 @@ plugins=(zsh-autosuggestions)
 source $ZSH/oh-my-zsh.sh
 
 # Customize to your needs...
-export PATH=$PATH:/usr/local/sbin:/usr/local/bin:/usr/bin:/usr/bin/core_perl:/home/sam/bin:/home/sam/.gem/ruby/2.0.0/bin:/home/sam/.cabal/bin:/home/sam/.gem/ruby/1.9.1/bin
+export PATH=/usr/local/bin:$PATH:/usr/local/sbin:/usr/local/bin:/usr/bin:/usr/bin/core_perl:/home/sam/bin:/home/sam/.gem/ruby/2.0.0/bin:/home/sam/.cabal/bin:/home/sam/.gem/ruby/1.9.1/bin
 
 export LC_ALL=
 export EDITOR="vim"
