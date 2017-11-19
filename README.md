@@ -4,6 +4,20 @@ SAM'S DOTFILES AND CONFIGS
 Uses GNU Stow to manage dotfiles and configs. Clone into home directory
 and stow various things.
 
+Vim
+---
+
+With the exception of `vim-mac`, my vim setup is modular.
+
+* `vim` : This is the base, modular config. It should be stow'd, everything
+else depends on it.
+* `vim-common-linux` : The common linux vim configs. Probably want this for
+some sensible defaults.
+* `vim-complete-n-syntax` : More resource intensive YouCompleteMe and
+Syntastic. Don't use on resource constrained systems, or ones where you
+don't need these things.
+* `vim-writing` : Stuff for writing.
+
 LEGACY
 ------
 
