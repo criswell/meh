@@ -18,6 +18,7 @@ else
     echom "CONFIG_ERR: Unable to load config.vim"
 end
 
+set t_Co=256
 " Load custom color scheme
 if filereadable(expand('~/.vimcolor'))
     source ~/.vimcolor
