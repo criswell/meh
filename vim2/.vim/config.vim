@@ -288,6 +288,11 @@ function! SuperCleverTab()
     endif
 endfunction
 
+inoremap <Tab> <C-R>=SuperCleverTab()<cr>
+
+set nocompatible               " be iMproved
+filetype off
+
 " Indentations
 autocmd Filetype html setlocal ts=2 sts=2 sw=2
 autocmd Filetype css setlocal ts=2 sts=2 sw=2
@@ -297,7 +302,6 @@ autocmd Filetype json setlocal ts=2 sts=2 sw=2
 autocmd Filetype ruby setlocal ts=2 sts=2 sw=2
 autocmd BufRead *.asc setlocal spell
 set indentexpr=HtmlIndentGet(v:lnum)
-
 
 " Load all the customizations
 runtime! configs/**/*.vim
