@@ -70,6 +70,9 @@ set nu
 
 set mouse=a
 
+" Markers for width
+set colorcolumn=80
+
 " No annoying sound on errors
 set noerrorbells
 set novisualbell
