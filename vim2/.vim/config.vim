@@ -303,5 +303,10 @@ autocmd Filetype ruby setlocal ts=2 sts=2 sw=2
 autocmd BufRead *.asc setlocal spell
 set indentexpr=HtmlIndentGet(v:lnum)
 
+call plug#begin('~/.vim/plugged')
+
 " Load all the customizations
 runtime! configs/**/*.vim
+
+call plug#end()
+
