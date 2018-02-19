@@ -70,6 +70,9 @@ set nu
 
 set mouse=a
 
+" Markers for width
+set colorcolumn=80
+
 " No annoying sound on errors
 set noerrorbells
 set novisualbell
@@ -288,6 +291,11 @@ function! SuperCleverTab()
     endif
 endfunction
 
+inoremap <Tab> <C-R>=SuperCleverTab()<cr>
+
+set nocompatible               " be iMproved
+filetype off
+
 " Indentations
 autocmd Filetype html setlocal ts=2 sts=2 sw=2
 autocmd Filetype css setlocal ts=2 sts=2 sw=2
@@ -298,6 +306,10 @@ autocmd Filetype ruby setlocal ts=2 sts=2 sw=2
 autocmd BufRead *.asc setlocal spell
 set indentexpr=HtmlIndentGet(v:lnum)
 
+call plug#begin('~/.vim/plugged')
 
 " Load all the customizations
 runtime! configs/**/*.vim
+
+call plug#end()
+

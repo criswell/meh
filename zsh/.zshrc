@@ -127,6 +127,15 @@ if [ -d "$HOME/bin" ]; then
     export PATH="$PATH:$HOME/bin"
 fi
 
+if [ -d "$HOME/.rvm/bin" ]; then
+    # Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
+    export PATH="$PATH:$HOME/.rvm/bin"
+fi
+
+if which ruby >/dev/null && which gem >/dev/null; then
+    PATH="$(ruby -e 'puts Gem.user_dir')/bin:$PATH"
+fi
+
 if [ -f ~/.aliases ]; then
     source ~/.aliases
 fi
