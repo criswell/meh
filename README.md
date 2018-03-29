@@ -13,9 +13,8 @@ With the exception of `vim-mac`, my vim setup is modular.
 else depends on it.
 * `vim-common-linux` : The common linux vim configs. Probably want this for
 some sensible defaults.
-* `vim-complete-n-syntax` : More resource intensive YouCompleteMe and
-Syntastic. Don't use on resource constrained systems, or ones where you
-don't need these things.
+* `vim-syntastic` : Syntastic.
+* `vim-youcompleteme` : YouCompletMe.
 * `vim-writing` : Stuff for writing.
 
 LEGACY
