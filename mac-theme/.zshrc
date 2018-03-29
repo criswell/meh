@@ -48,7 +48,7 @@ plugins=(git mercurial zsh-autosuggestions)
 source $ZSH/oh-my-zsh.sh
 
 # Customize to your needs...
-export PATH=/usr/local/bin:$PATH:/usr/local/sbin:/usr/local/bin:/usr/bin:/usr/bin/core_perl:/home/sam/bin:/home/sam/.gem/ruby/2.0.0/bin:/home/sam/.cabal/bin:/home/sam/.gem/ruby/1.9.1/bin
+export PATH=/usr/local/bin:$PATH:/usr/local/sbin:/usr/local/bin:/usr/bin:/usr/bin/core_perl:/home/sam/bin:/home/sam/.gem/ruby/2.0.0/bin:/home/sam/.cabal/bin:/home/sam/.gem/ruby/1.9.1/bin:/home/sam/Library/Python/2.7/bin/
 
 export LC_ALL=
 export EDITOR="vim"
@@ -189,3 +189,9 @@ fi
 #. "/usr/local/opt/nvm/nvm.sh"
 
 function npm-do { (PATH=$(npm bin):$PATH; eval $@;) }
+
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/Users/sam/Downloads/google-cloud-sdk/path.zsh.inc' ]; then source '/Users/sam/Downloads/google-cloud-sdk/path.zsh.inc'; fi
+
+# The next line enables shell command completion for gcloud.
+if [ -f '/Users/sam/Downloads/google-cloud-sdk/completion.zsh.inc' ]; then source '/Users/sam/Downloads/google-cloud-sdk/completion.zsh.inc'; fi
