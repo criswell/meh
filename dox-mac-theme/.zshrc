@@ -43,12 +43,12 @@ DISABLE_CORRECTION="true"
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git zsh-autosuggestions zsh-iterm-touchbar rbenv)
+plugins=(git zsh-autosuggestions zsh-iterm-touchbar)
 
 source $ZSH/oh-my-zsh.sh
 
 # Customize to your needs...
-export PATH=/usr/local/bin:$PATH:/usr/local/sbin:/usr/local/bin:/usr/bin:/usr/bin/core_perl:/home/sam/bin:/home/sam/.gem/ruby/2.0.0/bin:/home/sam/.cabal/bin:/home/sam/.gem/ruby/1.9.1/bin:/home/sam/Library/Python/2.7/bin/
+export PATH=/usr/local/bin:$PATH:/usr/local/sbin:/usr/local/bin:/usr/bin:/usr/bin/core_perl:/home/sam/bin
 
 export LC_ALL=
 export EDITOR="vim"
@@ -133,10 +133,6 @@ if [ -d "$HOME/work/git-plugins/bin" ] ; then
     export PATH="$PATH:$HOME/work/git-plugins/bin"
 fi
 
-if [ -d "$HOME/.cargo/bin" ]; then
-    export PATH="$PATH:$HOME/.cargo/bin"
-fi
-
 if [ -d "$HOME/bin" ]; then
     export PATH="$PATH:$HOME/bin"
 fi
@@ -159,12 +155,6 @@ if [ -f ~/.aliases ]; then
 fi
 
 stty -ixon
-
-PATH="/home/sam/perl5/bin${PATH+:}${PATH}"; export PATH;
-PERL5LIB="/home/sam/perl5/lib/perl5${PERL5LIB+:}${PERL5LIB}"; export PERL5LIB;
-PERL_LOCAL_LIB_ROOT="/home/sam/perl5${PERL_LOCAL_LIB_ROOT+:}${PERL_LOCAL_LIB_ROOT}"; export PERL_LOCAL_LIB_ROOT;
-PERL_MB_OPT="--install_base \"/home/sam/perl5\""; export PERL_MB_OPT;
-PERL_MM_OPT="INSTALL_BASE=/home/sam/perl5"; export PERL_MM_OPT;
 
 # Less syntax highlighting
 highlight_filter=$(which source-highlight-esc.sh)
@@ -195,3 +185,5 @@ if [ -f '/Users/sam/Downloads/google-cloud-sdk/path.zsh.inc' ]; then source '/Us
 
 # The next line enables shell command completion for gcloud.
 if [ -f '/Users/sam/Downloads/google-cloud-sdk/completion.zsh.inc' ]; then source '/Users/sam/Downloads/google-cloud-sdk/completion.zsh.inc'; fi
+
+eval "$(rbenv init -)"
