@@ -16,6 +16,7 @@ some sensible defaults.
 * `vim-syntastic` : Syntastic.
 * `vim-youcompleteme` : YouCompletMe.
 * `vim-writing` : Stuff for writing.
+* `vim-orgmode` : Stuff relating to [vim-orgmode](https://github.com/jceb/vim-orgmode)
 
 LEGACY
 ------
