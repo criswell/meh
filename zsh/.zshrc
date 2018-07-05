@@ -118,6 +118,10 @@ if [ -d "$HOME/.local/bin" ]; then
     export PATH="$PATH:$HOME/.local/bin"
 fi
 
+if [ -d "$HOME/.cargo/bin" ]; then
+    export PATH="$PATH:$HOME/.cargo/bin"
+fi
+
 if [ -d "$HOME/lib/rose" ]; then
     export ROSELIB_PATH="$HOME/lib/rose"
 fi
