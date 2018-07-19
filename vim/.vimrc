@@ -2,6 +2,11 @@
 " Sam's experimental vimrc rewrite
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
+" Dude, python2 shit suuuuuuuuuuuuuuuuuuuuuuuuuuucks in 2018
+if has('python3')
+  silent! python3 1
+endif
+
 " Start with our plugin manager
 if empty(glob('~/.vim/autoload/plug.vim'))
     silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
