@@ -4,6 +4,10 @@ SAM'S DOTFILES AND CONFIGS
 Uses GNU Stow to manage dotfiles and configs. Clone into home directory
 and stow various things.
 
+Quite frankly, if you're using some convoluted script to install your
+dotfiles instead of GNU Stow you're doing it wrong. Yes, I drew that line
+in the sand....
+
 Vim
 ---
 
