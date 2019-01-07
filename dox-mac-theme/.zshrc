@@ -48,7 +48,7 @@ plugins=(zsh-autosuggestions $plugins)
 plugins=(zsh-iterm-touchbar $plugins)
 plugins=(wd $plugins)
 plugins=(virtualenvwrapper $plugins)
-plugins=(autoswitch-virtualenv $plugins)
+#plugins=(autoswitch-virtualenv $plugins)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -194,6 +194,8 @@ if [ -f '/Users/sam/Downloads/google-cloud-sdk/completion.zsh.inc' ]; then sourc
 eval "$(rbenv init -)"
 eval "$(pyenv init -)"
 eval "$(pyenv virtualenv-init -)"
+
+export VIRTUAL_ENV_DISABLE_PROMPT=0
 
 # Desperate attempt at some reload sanity
 trap "source ~/.zshrc && rehash" USR1
