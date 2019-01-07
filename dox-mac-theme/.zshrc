@@ -43,7 +43,12 @@ DISABLE_CORRECTION="true"
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git zsh-autosuggestions zsh-iterm-touchbar wd)
+plugins=(git)
+plugins=(zsh-autosuggestions $plugins)
+plugins=(zsh-iterm-touchbar $plugins)
+plugins=(wd $plugins)
+plugins=(virtualenvwrapper $plugins)
+plugins=(autoswitch-virtualenv $plugins)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -189,3 +194,6 @@ if [ -f '/Users/sam/Downloads/google-cloud-sdk/completion.zsh.inc' ]; then sourc
 eval "$(rbenv init -)"
 eval "$(pyenv init -)"
 eval "$(pyenv virtualenv-init -)"
+
+# Desperate attempt at some reload sanity
+trap "source ~/.zshrc && rehash" USR1
