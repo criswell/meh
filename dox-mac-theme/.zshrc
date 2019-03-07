@@ -43,11 +43,7 @@ DISABLE_CORRECTION="true"
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git)
-plugins=(zsh-autosuggestions $plugins)
-plugins=(zsh-iterm-touchbar $plugins)
-plugins=(wd $plugins)
-plugins=(virtualenvwrapper $plugins)
+plugins=(git zsh-autosuggestions zsh-iterm-touchbar wd virtualenvwrapper)
 #plugins=(autoswitch-virtualenv $plugins)
 
 source $ZSH/oh-my-zsh.sh
@@ -159,6 +155,14 @@ if [ -f ~/.aliases ]; then
     source ~/.aliases
 fi
 
+if [ -d "/usr/local/opt/mysql@5.7/bin" ]; then
+    export PATH="/usr/local/opt/mysql@5.7/bin:$PATH"
+fi
+
+if [ -d "/usr/local/opt/openssl/lib" ]; then
+    export LIBRARY_PATH=$LIBRARY_PATH:/usr/local/opt/openssl/lib/
+fi
+
 stty -ixon
 
 # Less syntax highlighting
@@ -172,6 +176,11 @@ fi
 
 if [ -e "$HOME/.env_exports" ]; then
     source ~/.env_exports
+fi
+
+# Dox-specific shell stuff
+if [ -e "$HOME/.dox_startups.rc" ]; then
+    source ~/.dox_startups.rc
 fi
 
 export MANPAGER='less -n'
@@ -195,7 +204,4 @@ eval "$(rbenv init -)"
 eval "$(pyenv init -)"
 eval "$(pyenv virtualenv-init -)"
 
-export VIRTUAL_ENV_DISABLE_PROMPT=0
-
-# Desperate attempt at some reload sanity
-trap "source ~/.zshrc && rehash" USR1
+unset VIRTUAL_ENV_DISABLE_PROMPT
