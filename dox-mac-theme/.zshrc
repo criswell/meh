@@ -189,6 +189,9 @@ if hash fuck 2>/dev/null; then
     eval $(thefuck --alias)
 fi
 
+# Supposedly for desk
+fpath=(/path/to/desk/repo/shell_plugins/zsh $fpath)
+
 #export NVM_DIR="$HOME/.nvm"
 #. "/usr/local/opt/nvm/nvm.sh"
 
@@ -205,3 +208,13 @@ eval "$(pyenv init -)"
 eval "$(pyenv virtualenv-init -)"
 
 unset VIRTUAL_ENV_DISABLE_PROMPT
+
+if [[ ! -f ~/.zpm/zpm.zsh ]]; then
+  git clone --recursive https://github.com/zpm-zsh/zpm ~/.zpm
+fi
+source ~/.zpm/zpm.zsh
+
+zpm load zpm-zsh/autoenv
+
+# Hook for desk activation
+[ -n "$DESK_ENV" ] && source "$DESK_ENV" || true
