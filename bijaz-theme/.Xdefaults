@@ -39,8 +39,9 @@ urxvt-256color*cursorColor:      magenta
 urxvt-256color*underlineColor:   #86a2be
 
 !A
-urxvt-256color*font:             xft:DejaVu Sans Mono:pixelsize=24
-urxvt-256color*boldFont:         xft:DejaVu Sans Mono:pixelsize=24
+urxvt-256color*font:             xft:DejaVuSansMono Nerd Font:pixelsize=24
+urxvt-256color*boldFont:         xft:DejaVuSansMono Nerd Font:pixelsize=24
+!urxvt-256color*boldFont:         xft:DejaVu Sans Mono:pixelsize=24
 ! A
 urxvt-256color*scrollBar:        false
 urxvt-256color*jumpScroll:       false
@@ -54,8 +55,14 @@ urxvt-256color*loginShell:       true
 urxvt-256color*saveLines:        15000
 
 ! A
+urxvt-256color*transparent: true
 urxvt-256color*shading:         30
-urxvt-256color*fading:   10
+!urxvt-256color*fading:   10
+
+!URxvt*inheritPixmap: true
+!URxvt*transparent: true
+! URxvt*shading: 0 to 99 darkens, 101 to 200 lightens
+!URxvt*shading: 110
 
 URxvt.perl-ext-common: font-size
 
@@ -245,7 +252,8 @@ URxvt.keysym.C-S-Down: perl:font-size:decglobal
 !*color15:  #FDFDFD
 
 !Gslob nature-suede
-URxvt*background:       #170F0D
+URxvt*depth:            32
+URxvt*background:       [20]#170F0D
 URxvt*foreground:       #746C48
 
 URxvt*color0:           #392925
