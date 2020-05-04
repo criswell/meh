@@ -2,7 +2,36 @@
 
 sxhkd &
 
-bspc monitor -d I II III IV V VI VII VIII IX X
+layout_laptop_only() {
+  bspc monitor -d I II III IV V VI VII VIII IX X
+}
+
+layout_external_all() {
+  bspc monitor HDMI-1 -d I II III IV V VI VII VIII IX X
+  bspc monitor eDP-1 -d 1
+  bspc monitor DP-1 A B C D E
+}
+
+monitors=$(xrandr | grep -sw 'connected' | cut -d " " -f 1)
+
+unset DISPLAY_LAPTOP DISPLAY_HDMI DISPLAY_DP1 || true
+
+for m in $monitors
+do
+  if [[ "$m" == "eDP-1" ]]; then
+    DISPLAY_LAPTOP=yes
+  elif [[ "$m" == "HDMI" ]]; then
+    DISPLAY_HDMI=yes
+  elif [[ "$m" == "DP-1" ]]; then
+    DISPLAY_DP1=yes
+  fi
+done
+
+if [ -n "$DISPLAY_LAPTOP" ] && [ -n "$DISPLAY_HDMI" ] && [ -n "$DISPLAY_DP1" ]; then
+  layout_external_all
+else
+  layout_laptop_only
+fi
 
 bspc config border_width         1
 bspc config window_gap           3
@@ -11,6 +40,3 @@ bspc config split_ratio          0.52
 bspc config borderless_monocle   true
 bspc config gapless_monocle      true
 bspc config top_padding 30
-
-# bspc config focus_follows_pointer true
-
