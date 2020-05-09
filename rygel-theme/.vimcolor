@@ -1,0 +1,3 @@
+colorscheme dracula
+set cursorline
+hi CursorLine   cterm=NONE ctermbg=darkred ctermfg=white
