@@ -8,6 +8,8 @@ layout_laptop_only() {
 }
 
 layout_external_all() {
+  xrandr --output HDMI-1 --mode 2560x1080 --pos 0x0 --primary
+  xrandr --output eDP-1 --mode 2560x1440 --pos 2560x0
   xrandr --dpi 96x96
   bspc monitor HDMI-1 -d I II III IV V VI VII VIII IX
   bspc monitor eDP-1 -d  X
