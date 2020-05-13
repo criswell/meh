@@ -1,5 +1,7 @@
 #!/bin/sh
 
+# source https://www.reddit.com/r/bspwm/comments/gixm33/little_script_to_resizeremove_gaps_on_the_fly/
+
 window_gap="bspc config window_gap"
 
 case "$1" in
