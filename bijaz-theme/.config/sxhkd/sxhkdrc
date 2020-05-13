@@ -123,6 +123,10 @@ super + alt + shift + {Left,Down,Up,Right}
 super + ctrl + alt + {Left,Down,Up,Right}
 	bspc node -v {-20 0,0 20,0 -20,20 0}
 
+# Resize gaps
+super + {plus,minus,equal}
+    /home/sam/.config/bspwm/gaps.sh {plus,minus,equal}
+
 #
 # Misc apps
 #
