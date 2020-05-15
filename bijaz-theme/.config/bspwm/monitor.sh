@@ -1,5 +1,7 @@
 #!/bin/sh
 
+source /home/sam/.config/bspwm/monitor_settings.sh
+
 # Logic for the monitor setup
 
 layout_laptop_only() {
@@ -23,21 +25,6 @@ layout_external_all() {
   bspc monitor HDMI-1 -d II III IV V VI VII VIII IX
   bspc monitor eDP-1 -d  X
 }
-
-monitors=$(xrandr | grep -sw 'connected' | cut -d " " -f 1)
-
-unset DISPLAY_LAPTOP DISPLAY_HDMI DISPLAY_DP2 || true
-
-for m in $monitors
-do
-  if [[ "$m" == "eDP-1" ]]; then
-    DISPLAY_LAPTOP=yes
-  elif [[ "$m" == "HDMI-1" ]]; then
-    DISPLAY_HDMI=yes
-  elif [[ "$m" == "DP-2" ]]; then
-    DISPLAY_DP2=yes
-  fi
-done
 
 if [ -n "$DISPLAY_LAPTOP" ] && [ -n "$DISPLAY_HDMI" ] && [ -n "$DISPLAY_DP2" ]; then
   layout_external_all
