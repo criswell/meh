@@ -1,5 +1,7 @@
 #! /bin/sh
 
+picom -f -D 5 -b
+
 sxhkd &
 
 # I have done this modularly, so I can decouple the monitor setup from the

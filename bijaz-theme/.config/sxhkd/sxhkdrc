@@ -127,6 +127,14 @@ super + ctrl + alt + {Left,Down,Up,Right}
 super + {plus,minus,equal}
     /home/sam/.config/bspwm/gaps.sh {plus,minus,equal}
 
+# hide window
+super + v
+  bspc node -g hidden
+
+# unhide window
+super + shift + v
+  bspc node {,$(bspc query -N -n .hidden | tail -n1)} -g hidden=off
+
 #
 # Misc apps
 #
