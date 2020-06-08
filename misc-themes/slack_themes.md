@@ -1,0 +1,3 @@
+My custom banana theme for bijaz
+
+#F2DD74,#FFF8D4,#FFC806,#591035,#FFF8D4,#591035,#4C6DC2,#DD4147,#EDBA07,#591035
