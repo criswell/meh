@@ -1,0 +1,4 @@
+"colorscheme iroh
+colorscheme tender
+set cursorline
+hi CursorLine   cterm=NONE ctermbg=darkred ctermfg=white

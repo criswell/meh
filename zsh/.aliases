@@ -1,2 +1,2 @@
 alias docker-clean='docker rm -v $(docker ps -a -q -f status=exited)'
-alias jlremote='/home/sam/venv/jupter/bin/python /home/sam/venv/jupter/bin/jupyter lab --no-browser --port=5678'
+alias sshci='ssh -o "UserKnownHostsFile /dev/null"'

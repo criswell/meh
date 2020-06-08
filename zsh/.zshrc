@@ -43,7 +43,7 @@ DISABLE_CORRECTION="true"
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git mercurial zsh-autosuggestions wd)
+plugins=(git mercurial zsh-autosuggestions wd poetry)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -145,11 +145,13 @@ fi
 
 stty -ixon
 
-PATH="/home/sam/perl5/bin${PATH+:}${PATH}"; export PATH;
-PERL5LIB="/home/sam/perl5/lib/perl5${PERL5LIB+:}${PERL5LIB}"; export PERL5LIB;
-PERL_LOCAL_LIB_ROOT="/home/sam/perl5${PERL_LOCAL_LIB_ROOT+:}${PERL_LOCAL_LIB_ROOT}"; export PERL_LOCAL_LIB_ROOT;
-PERL_MB_OPT="--install_base \"/home/sam/perl5\""; export PERL_MB_OPT;
-PERL_MM_OPT="INSTALL_BASE=/home/sam/perl5"; export PERL_MM_OPT;
+# TODO : Maybe delete this shit? Where'd it come from? It's probably from some
+# long dead system...
+# PATH="/home/sam/perl5/bin${PATH+:}${PATH}"; export PATH;
+# PERL5LIB="/home/sam/perl5/lib/perl5${PERL5LIB+:}${PERL5LIB}"; export PERL5LIB;
+# PERL_LOCAL_LIB_ROOT="/home/sam/perl5${PERL_LOCAL_LIB_ROOT+:}${PERL_LOCAL_LIB_ROOT}"; export PERL_LOCAL_LIB_ROOT;
+# PERL_MB_OPT="--install_base \"/home/sam/perl5\""; export PERL_MB_OPT;
+# PERL_MM_OPT="INSTALL_BASE=/home/sam/perl5"; export PERL_MM_OPT;
 
 # Less syntax highlighting
 highlight_filter=$(which source-highlight-esc.sh)
@@ -158,6 +160,10 @@ if [ -x "$highlight_filter" ]; then
     export LESS=' -N -R '
 else
     export LESS=' -N '
+fi
+
+if [ -e "$HOME/.env_exports" ]; then
+    source ~/.env_exports
 fi
 
 export MANPAGER='less -n'
