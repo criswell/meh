@@ -315,3 +315,4 @@ runtime! configs/**/*.vim
 
 call plug#end()
 
+set encoding=utf-8
