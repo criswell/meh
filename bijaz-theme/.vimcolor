@@ -1,4 +1,7 @@
 colorscheme iroh
 "colorscheme tender
+"set fillchars+=stl:\ ,stlnc:\ "
 set cursorline
 hi CursorLine   cterm=NONE ctermbg=darkred ctermfg=white
+highlight StatusLine   cterm=none ctermfg=white ctermbg=black guibg=red
+highlight StatusLineNC cterm=none ctermfg=white ctermbg=black guibg=green
