@@ -10,8 +10,8 @@ layout_laptop_only() {
 }
 
 layout_external_hdmi_only() {
-  xrandr --output HDMI-1 --mode 3840x1200 --pos 0x0 --primary
-  xrandr --output eDP-1 --mode 2560x1440 --pos 2560x0
+  #xrandr --output HDMI-1 --mode 3840x1200 --pos 0x0 --primary
+  #xrandr --output eDP-1 --mode 2560x1440 --pos 2560x0
   xrandr --dpi 96x96
   bspc monitor HDMI-1 -d I II III IV V VI VII VIII XI
   bspc monitor eDP-1 -d  X
@@ -19,8 +19,8 @@ layout_external_hdmi_only() {
 
 layout_external_all() {
   #xrandr --output HDMI-1 --mode 2560x1080 --pos 0x0 --primary
-  xrandr --output HDMI-1 --mode 3840x1200 --pos 0x0 --primary
-  xrandr --output eDP-1 --mode 2560x1440 --pos 2560x0
+  #xrandr --output HDMI-1 --mode 3840x1200 --pos 0x0 --primary
+  #xrandr --output eDP-1 --mode 2560x1440 --pos 2560x0
   xrandr --dpi 96x96
   bspc monitor DP-2 -d I
   bspc monitor HDMI-1 -d II III IV V VI VII VIII IX
