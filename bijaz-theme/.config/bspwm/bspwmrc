@@ -7,5 +7,6 @@ sxhkd &
 # I have done this modularly, so I can decouple the monitor setup from the
 # more generic bspwm setup
 
+/home/sam/.config/bspwm/plasma_settings.sh
 /home/sam/.config/bspwm/monitor.sh
 /home/sam/.config/bspwm/window_setup.sh
