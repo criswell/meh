@@ -1,0 +1,5 @@
+colorscheme tigrana-256-dark 
+set cursorline
+hi CursorLine   cterm=NONE ctermbg=darkred ctermfg=white
+highlight StatusLine   cterm=none ctermfg=white ctermbg=black guibg=red
+highlight StatusLineNC cterm=none ctermfg=white ctermbg=black guibg=green
