@@ -214,8 +214,6 @@ map <S-[> vi[
 
 nnoremap <silent> <C-Right> <c-w>l
 nnoremap <silent> <C-Left> <c-w>h
-nnoremap <silent> <C-Up> <c-w>k
-nnoremap <silent> <C-Down> <c-w>j
 
 map <A-Down> :bn <Enter>
 map <A-Up> :bp <Enter>
