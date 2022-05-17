@@ -11,7 +11,7 @@ in the sand....
 Vim
 ---
 
-With the exception of `vim-mac`, my vim setup is modular.
+My vim setup is modular.
 
 * `vim` : This is the base, modular config. It should be stow'd, everything
 else depends on it.
