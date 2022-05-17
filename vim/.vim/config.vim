@@ -110,6 +110,10 @@ set smarttab
 set shiftwidth=4
 set tabstop=4
 
+" Visually display the tabs
+set list
+set listchars=tab:▸·
+
 " Linebreak on 500 characters
 set lbr
 set tw=500
