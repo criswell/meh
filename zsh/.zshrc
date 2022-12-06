@@ -180,3 +180,5 @@ fi
 source ~/.zpm/zpm.zsh
 
 zpm load zpm-zsh/autoenv
+
+#eval "$(rbenv init - zsh)"
