@@ -306,6 +306,7 @@ autocmd Filetype sh setlocal ts=2 sts=2 sw=2
 autocmd Filetype javascript setlocal ts=2 sts=2 sw=2
 autocmd Filetype json setlocal ts=2 sts=2 sw=2
 autocmd Filetype ruby setlocal ts=2 sts=2 sw=2
+autocmd Filetype lua setlocal ts=2 sts=2 sw=2
 autocmd BufRead *.asc setlocal spell
 autocmd Filetype org setlocal ts=2 sts=2 sw=2 spell
 set indentexpr=HtmlIndentGet(v:lnum)
