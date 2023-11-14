@@ -106,10 +106,7 @@ autoload -U up-line-or-beginning-search
 autoload -U down-line-or-beginning-search
 zle -N up-line-or-beginning-search
 zle -N down-line-or-beginning-search
-#bindkey "^[OA" up-line-or-beginning-search # Up
-#bindkey "^[OB" down-line-or-beginning-search # Down
-#bindkey "^[[A" up-line-or-beginning-search # Up
-#bindkey "^[[B" down-line-or-beginning-search # Down
+
 # keybindings for history autocomplete
 [[ -n "${key[Up]}" ]] && bindkey "${key[Up]}" up-line-or-beginning-search 
 [[ -n "${key[Down]}" ]] && bindkey "${key[Down]}" down-line-or-beginning-search
@@ -139,19 +136,16 @@ if which ruby >/dev/null && which gem >/dev/null; then
     PATH="$(ruby -e 'puts Gem.user_dir')/bin:$PATH"
 fi
 
+# NPM bullshit
+NPM_PACKAGES="${HOME}/.npm-packages"
+
+export PATH="$PATH:$NPM_PACKAGES/bin"
+
 if [ -f ~/.aliases ]; then
     source ~/.aliases
 fi
 
 stty -ixon
-
-# TODO : Maybe delete this shit? Where'd it come from? It's probably from some
-# long dead system...
-# PATH="/home/sam/perl5/bin${PATH+:}${PATH}"; export PATH;
-# PERL5LIB="/home/sam/perl5/lib/perl5${PERL5LIB+:}${PERL5LIB}"; export PERL5LIB;
-# PERL_LOCAL_LIB_ROOT="/home/sam/perl5${PERL_LOCAL_LIB_ROOT+:}${PERL_LOCAL_LIB_ROOT}"; export PERL_LOCAL_LIB_ROOT;
-# PERL_MB_OPT="--install_base \"/home/sam/perl5\""; export PERL_MB_OPT;
-# PERL_MM_OPT="INSTALL_BASE=/home/sam/perl5"; export PERL_MM_OPT;
 
 # Less syntax highlighting
 highlight_filter=$(which source-highlight-esc.sh)
