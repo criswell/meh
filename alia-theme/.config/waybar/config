@@ -1,3 +1,5 @@
+// -*- mode: json -*-
+
 {
     "layer": "top", // Waybar at top layer
     // "position": "bottom", // Waybar position (top|bottom|left|right)
@@ -5,44 +7,61 @@
     // "width": 1280, // Waybar width
     // "gtk-layer-shell": "false",
     // Choose the order of the modules
-    "modules-left": [],
-    "modules-center": [],
+    "modules-left": [
+    ],
+    "modules-center": [
+    ],
     "modules-right": [
         "custom/zypper",
-        "network", 
-        "bluetooth", 
-        //"cpu", 
-        "memory", 
-        "temperature", 
-        //"backlight", 
-        "battery", 
-        "battery#bat2", 
-        "pulseaudio", 
-        "custom/layout", 
-        "clock", 
-        "custom/notification"
+
+        "custom/brackleft",
+        "network",
+        "bluetooth",
+        "custom/brackright",
+
+        "custom/brackleft",
+        "cpu",
+        "memory",
+        "temperature",
+        "custom/brackright",
+
+        "custom/brackleft",
+        "battery",
+        "pulseaudio",
+        "custom/brackright",
+
+        "custom/slash",
+        "clock",
+        "custom/slash"
     ],
-    //"sway/mode": {
-    //    "format": " {}"
-    //},
-    //"sway/workspaces": {
-    //    "all-outputs": false,
-    //    "disable-scroll": true,
-    //    "format": " {icon} ",
-    //    "format-icons": {
-    //        "urgent": "",
-    //        "focused": "",
-    //        "default": ""
-    //    }
-    //},
-    //"sway/window": {
-    //    "max-length": 80,
-    //    "tooltip": false
-    //},
-    //"custom/layout": {
-    //    "tooltip": false,
-    //    "exec": "swaymsg -mrt subscribe '[\"input\"]' | jq -r --unbuffered \"select(.change == \\\"xkb_layout\\\") | .input | select(.type == \\\"keyboard\\\") | .xkb_active_layout_name | .[0:2]\""
-    //},
+    "custom/test-blocks": {
+        "format": "▁▂▃▄▅▆▇█",
+        "tooltip": false
+    },
+    "custom/test-bracket": {
+        "format": "❨ ❩ , ❪ ❫ , ❴ ❵ , ❬ ❭ , ❮ ❯ , ❰ ❱ , ❲ ❳",
+        "tooltip": false
+    },
+    "custom/vert-dot": {
+        "format": "╏",
+        "tooltip": false
+    },
+    "custom/brackleft": {
+        "format": " ❨",
+        "tooltip": false
+    },
+    "custom/brackright": {
+        "format": "❩  ",
+        "tooltip": false
+    },
+    "custom/slash": {
+        "format": "◥◣",
+        "tooltip": false
+    },
+    "custom/slash3": {
+        "format": "⫻",
+        "tooltip": false
+    },
     "custom/zypper": {
         "format": "{} ",
         "interval": 3600,
@@ -51,37 +70,10 @@
         "on-click": "exec konsole -e sudo sh -c 'zypper ref; zypper dup; pkill -SIGRTMIN+8 waybar'",
         "signal": 8
     },
-    // Modules configuration
-    //  "sway/workspaces": {
-    //     "disable-scroll": true,
-    //     "all-outputs": true,
-    //     "format": "{name}: {icon}",
-    //     "format-icons": {
-    //         "1": "",
-    //         "2": "",
-    //         "3": "",
-    //         "4": "",
-    //         "5": "",
-    //         "urgent": "",
-    //         "focused": "",
-    //         "default": ""
-    //     }
-    // },
-    "idle_inhibitor": {
-        "format": "{icon}",
-        "format-icons": {
-            "activated": "",
-            "deactivated": ""
-        }
-    },
-    "tray": {
-        // "icon-size": 21,
-        "spacing": 10
-    },
     "clock": {
         // "timezone": "America/New_York",
-        "format": " {:%b %d %Y %R}",
-        "format-alt": "{:%a %d %b w:%V %H:%M}",
+        "format": " {:%b %d %Y %I:%M %p}",
+        "format-alt": " {:%A %b %d %Y}",
         "tooltip-format": "<span color='#35b9ab'><tt><small>{calendar}</small></tt></span>",
         "calendar": {
             "mode-mon-col"      : 4,
@@ -117,14 +109,14 @@
         "format": "{temperatureC}°C {icon}",
         "format-icons": ["", "", ""]
     },
-    "backlight": {
+    //"backlight": {
         // "device": "acpi_video1",
-        "format": "{percent}% {icon}",
-        "format-icons": ["", ""]
-    },
+    //    "format": "{percent}% {icon}",
+    //    "format-icons": ["", ""]
+    //},
     "battery": {
         "states": {
-            // "good": 95,
+            "good": 85,
             "warning": 30,
             "critical": 15
         },
@@ -134,32 +126,31 @@
         "format-alt": "{capacity}% {time}",
         "format-icons": ["", "", "", "", ""]
     },
-    "battery#bat2": {
-        "bat": "BAT2"
-    },
     "network": {
         // "interface": "wlp2*", // (Optional) To force the use of this interface
         "format-wifi": "",
         "format-ethernet": "",
         "format-linked": "",
         "format-disconnected": "⚠",
-        "format-alt": "{ifname} {essid} ({signalStrength}%)"
+        "format-alt": "{ifname} {essid} ({signalStrength}%)",
+        //"on-click-right": "exec konsole -e sudo sh -c 'nmtui'"
+        "on-click-right": "exec rofi-network-manager"
     },
     "bluetooth": {
-	"format": "",
-	"format-disabled": "",
-	"format-off": "",
-	"format-connected": " {num_connections}",
-	// "format-connected": " {device_alias}",
-	"tooltip-format": "{controller_address} {status}\n\n{num_connections} connected",
-	"tooltip-format-disabled": "{status}",
-	"tooltip-format-connected": "{controller_address}\n\n{num_connections} connected\n\n{device_enumerate}",
-	"tooltip-format-enumerate-connected": "{device_alias}\t{device_address}",
-	"format-connected-battery": " {device_alias} {device_battery_percentage}%",
-	"tooltip-format-enumerate-connected-battery": "{device_alias}\t{device_address}\t{device_battery_percentage}%",
-	// "format-device-preference": [ "device1", "device2" ], // preference list deciding the displayed device
-	"on-click": "bluetooth toggle; pkill -SIGRTMIN+8 waybar",
-	"on-click-right": "exec alacritty -e sh -c 'bluetoothctl'"
+        "format": "",
+        "format-disabled": "",
+        "format-off": "",
+        "format-connected": " {num_connections}",
+        // "format-connected": " {device_alias}",
+        "tooltip-format": "{controller_address} {status}\n\n{num_connections} connected",
+        "tooltip-format-disabled": "{status}",
+        "tooltip-format-connected": "{controller_address}\n\n{num_connections} connected\n\n{device_enumerate}",
+        "tooltip-format-enumerate-connected": "{device_alias}\t{device_address}",
+        "format-connected-battery": " {device_alias} {device_battery_percentage}%",
+        "tooltip-format-enumerate-connected-battery": "{device_alias}\t{device_address}\t{device_battery_percentage}%",
+        // "format-device-preference": [ "device1", "device2" ], // preference list deciding the displayed device
+        "on-click": "bluetooth toggle; pkill -SIGRTMIN+8 waybar",
+        "on-click-right": "exec konsole -e sh -c 'bluetoothctl'"
     },
     "pulseaudio": {
         "format": "{icon}",
@@ -180,29 +171,5 @@
         "on-click-right": "pavucontrol",
         "tooltip": false
     },
-    "custom/scratchpad": {
-        "format-text": "{}",
-        "return-type": "json",
-        "interval": 3,
-        "exec": "/usr/share/openSUSEway/helpers/scratchpad-indicator.sh 2> /dev/null",
-        "exec-if": "exit 0",
-        "on-click": "swaymsg 'scratchpad show'",
-        "on-click-right": "swaymsg 'move scratchpad'"
-    },
-    "custom/notification": {
-	"tooltip": true,
-	"format": "{icon}",
-	"format-icons": {
-	     "notification": "<span foreground='red'><small><sup>⬤</sup></small></span>",
-	     "none": " ",
-	     "dnd-notification": "<span foreground='red'><small><sup>⬤</sup></small></span>",
-	     "dnd-none": " "
-	},
-	"return-type": "json",
-	"exec-if": "which swaync-client",
-	"exec": "swaync-client -swb",
-	"on-click": "swaync-client -t -sw",
-	"on-click-right": "swaync-client -d -sw",
-	"escape": true
    }
 }

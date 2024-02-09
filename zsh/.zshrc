@@ -147,13 +147,11 @@ fi
 
 stty -ixon
 
+export LESS="NReFX"
 # Less syntax highlighting
 highlight_filter=$(which source-highlight-esc.sh)
 if [ -x "$highlight_filter" ]; then
     export LESSOPEN="| ${highlight_filter} %s"
-    export LESS=' -N -R '
-else
-    export LESS=' -N '
 fi
 
 if [ -e "$HOME/.env_exports" ]; then

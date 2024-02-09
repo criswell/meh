@@ -159,7 +159,6 @@ layout {
 // Note that running niri as a session supports xdg-desktop-autostart,
 // which may be more convenient to use.
 // spawn-at-startup "alacritty" "-e" "fish"
-spawn-at-startup "waybar"
 
 cursor {
     // Change the theme and size of the cursor as well as set the
@@ -201,7 +200,8 @@ binds {
 
     // Suggested binds for running programs: terminal, app launcher, screen locker.
     Mod+Return { spawn "konsole"; }
-    Mod+D { spawn "fuzzel"; }
+    Mod+Space { spawn "rofi" "-show" "drun"; }
+    // Mod+Space { spawn "fuzzel"; }
     Mod+Alt+L { spawn "swaylock"; }
 
     // You can also use a shell:
