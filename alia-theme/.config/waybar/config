@@ -10,7 +10,12 @@
     "modules-left": [
         "custom/brackleft",
         "custom/sleep",
+        "custom/brackright",
+
+        "custom/brackleft",
+        "custom/reboot",
         "custom/brackright"
+
     ],
     "modules-center": [
         "custom/brackleft",
@@ -80,6 +85,10 @@
         "exec-if": "exit 0",
         "on-click": "exec konsole -e sudo sh -c 'zypper ref; zypper dup; pkill -SIGRTMIN+8 waybar'",
         "signal": 8
+    },
+    "custom/reboot": {
+        "format": "Reboot ⥀",
+        "on-click": "systemctl reboot"
     },
     "custom/sleep": {
         "format": "Sleep 💤",
