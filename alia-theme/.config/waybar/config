@@ -8,8 +8,19 @@
     // "gtk-layer-shell": "false",
     // Choose the order of the modules
     "modules-left": [
+        "custom/brackleft",
+        "custom/sleep",
+        "custom/brackright"
     ],
     "modules-center": [
+        "custom/brackleft",
+        "custom/firefox",
+        "custom/brackright",
+
+        "custom/brackleft",
+        "custom/dolphin",
+        "custom/brackright"
+
     ],
     "modules-right": [
         "custom/zypper",
@@ -69,6 +80,22 @@
         "exec-if": "exit 0",
         "on-click": "exec konsole -e sudo sh -c 'zypper ref; zypper dup; pkill -SIGRTMIN+8 waybar'",
         "signal": 8
+    },
+    "custom/sleep": {
+        "format": "Sleep 💤",
+        "tooltip": true,
+        "tooltip-format": "(L) Sleep",
+        "on-click": "systemctl suspend"
+    },
+    "custom/firefox": {
+        "format" : "Firefox  🌐", // 🦊", // 🌐",
+        "tooltip": true,
+        "tooltip-format": "Launch Firefox",
+        "on-click": "firefox"
+    },
+    "custom/dolphin": {
+        "format": "Files 🗁",
+        "on-click": "dolphin"
     },
     "clock": {
         // "timezone": "America/New_York",
