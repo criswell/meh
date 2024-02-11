@@ -1,0 +1,27 @@
+daemonize
+show-failed-attempts
+color=1f2b1f
+font="Source Code Pro"
+font-size="17pt"
+indicator-radius=200
+indicator-thickness=20
+line-color=282A36
+ring-color=93f9c3
+inside-color=28362e
+key-hl-color=50FA7B
+separator-color=00000000
+text-color=F8F8F2
+text-caps-lock-color=""
+line-ver-color=a2f993
+ring-ver-color=#a2f993
+inside-ver-color=282A36
+text-ver-color=8BE9FD
+ring-wrong-color=FF5555
+text-wrong-color=FF5555
+inside-wrong-color=282A36
+inside-clear-color=282A36
+text-clear-color=8BE9FD
+ring-clear-color=8BE9FD
+line-clear-color=8BE9FD
+line-wrong-color=282A36
+bs-hl-color=8BE9FD
