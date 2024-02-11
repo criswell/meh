@@ -9,6 +9,10 @@
     // Choose the order of the modules
     "modules-left": [
         "custom/brackleft",
+        "custom/lock",
+        "custom/brackright",
+
+        "custom/brackleft",
         "custom/sleep",
         "custom/brackright",
 
@@ -101,6 +105,11 @@
         "tooltip": true,
         "tooltip-format": "Launch Firefox",
         "on-click": "firefox"
+    },
+    "custom/lock": {
+        "format" : "Lock 🔒",
+        "tooltip": true,
+        "on-click": "swaylock"
     },
     "custom/dolphin": {
         "format": "Files 🗁",
