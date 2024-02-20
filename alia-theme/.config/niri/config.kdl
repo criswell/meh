@@ -54,8 +54,16 @@ input {
     // disable-power-key-handling
 }
 
-output "DP-6" {
-    position x=1920 y=0
+output "DP-7" {
+    // main monitor
+    //mode "3840x1200@60"
+    position x=2560 y=0
+}
+
+output "DP-9" {
+    // secondary
+    //mode "2560x1080@60"
+    position x=0 y=0
 }
 
 // You can configure outputs by their name, which you can find
@@ -63,6 +71,7 @@ output "DP-6" {
 // The built-in laptop monitor is usually called "eDP-1".
 // Remember to uncommend the node by removing "/-"!
 output "eDP-1" {
+    // laptop
     // Uncomment this line to disable this output.
     // off
 
@@ -86,7 +95,7 @@ output "eDP-1" {
     // so to put another output directly adjacent to it on the right, set its x to 1920.
     // It the position is unset or results in an overlap, the output is instead placed
     // automatically.
-    position x=0 y=600
+    position x=500 y=1080
 }
 
 layout {
