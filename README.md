@@ -28,6 +28,11 @@ LEGACY
 Those items in the `legacy` directory are considered deprecated and should
 not be used anymore.
 
+DETAILS
+-------
+
+More details on what's here can be found [here](DESC.md)
+
 Copyright
 ---------
 Unless otherwise specified in specific files or sub-directories, code and
