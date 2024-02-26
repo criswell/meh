@@ -54,13 +54,13 @@ input {
     // disable-power-key-handling
 }
 
-output "DP-7" {
+output "DP-6" {
     // main monitor
     //mode "3840x1200@60"
     position x=2560 y=0
 }
 
-output "DP-9" {
+output "DP-8" {
     // secondary
     //mode "2560x1080@60"
     position x=0 y=0
@@ -188,7 +188,7 @@ cursor {
 // You can change the path where screenshots are saved.
 // A ~ at the front will be expanded to the home directory.
 // The path is formatted with strftime(3) to give you the screenshot date and time.
-screenshot-path "~/Pictures/Screenshots/Screenshot from %Y-%m-%d %H-%M-%S.png"
+screenshot-path "~/Pictures/Screenshots/Screenshot_%Y-%m-%d_%H-%M-%S.png"
 
 // You can also set this to null to disable saving screenshots to disk.
 // screenshot-path null
