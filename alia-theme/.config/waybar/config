@@ -9,17 +9,8 @@
     // Choose the order of the modules
     "modules-left": [
         "custom/brackleft",
-        "custom/lock",
+        "custom/power",
         "custom/brackright",
-
-        "custom/brackleft",
-        "custom/sleep",
-        "custom/brackright",
-
-        "custom/brackleft",
-        "custom/reboot",
-        "custom/brackright"
-
     ],
     "modules-center": [
         "custom/brackleft",
@@ -89,6 +80,10 @@
         "exec-if": "exit 0",
         "on-click": "exec konsole -e sudo sh -c 'zypper ref; zypper dup; pkill -SIGRTMIN+8 waybar'",
         "signal": 8
+    },
+    "custom/power": {
+        "format": "⏻",
+        "on-click": "/home/sam/.config/rofi/applets/bin/powermenu.sh"
     },
     "custom/reboot": {
         "format": "Reboot ⥀",
