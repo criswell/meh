@@ -82,7 +82,7 @@
         "signal": 8
     },
     "custom/power": {
-        "format": "⏻",
+        "format": "<span color='#fcba03'>⏻</span>",
         "on-click": "/home/sam/.config/rofi/applets/bin/powermenu.sh"
     },
     "custom/reboot": {
@@ -96,7 +96,7 @@
         "on-click": "systemctl suspend"
     },
     "custom/firefox": {
-        "format" : "Firefox  🌐", // 🦊", // 🌐",
+        "format" : "<span color='#03dffc'>Firefox  🌐</span>", // 🦊", // 🌐",
         "tooltip": true,
         "tooltip-format": "Launch Firefox",
         "on-click": "firefox"
@@ -107,7 +107,7 @@
         "on-click": "swaylock"
     },
     "custom/dolphin": {
-        "format": "Files 🗁",
+        "format": "<span color='#03dffc'>Files 🗁</span>",
         "on-click": "dolphin"
     },
     "clock": {
