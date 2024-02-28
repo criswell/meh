@@ -11,6 +11,14 @@
         "custom/brackleft",
         "custom/power",
         "custom/brackright",
+ 
+        "custom/brackleft",
+        "custom/workspace-up",
+        "custom/brackright",
+
+        "custom/brackleft",
+        "custom/workspace-down",
+        "custom/brackright",
     ],
     "modules-center": [
         "custom/brackleft",
@@ -41,9 +49,9 @@
         "pulseaudio",
         "custom/brackright",
 
-        "custom/slash",
+        "custom/slash-right",
         "clock",
-        "custom/slash"
+        "custom/slash-right"
     ],
     "custom/test-blocks": {
         "format": "▁▂▃▄▅▆▇█",
@@ -65,8 +73,12 @@
         "format": "❩  ",
         "tooltip": false
     },
-    "custom/slash": {
-        "format": "◥◣",
+    "custom/slash-right": {
+        "format": "<span color='#b2cf11'>◥◣</span>",
+        "tooltip": false
+    },
+    "custom/slash-left": {
+        "format": "<span color='#b2cf11'>◢◤</span>",
         "tooltip": false
     },
     "custom/slash3": {
@@ -84,6 +96,14 @@
     "custom/power": {
         "format": "<span color='#fcba03'>⏻</span>",
         "on-click": "/home/sam/.config/rofi/applets/bin/powermenu.sh"
+    },
+    "custom/workspace-up": {
+        "format": "<span color='#11cfbc'>▲</span>",
+        "on-click": "niri msg action focus-workspace-up"
+    },
+    "custom/workspace-down": {
+        "format": "<span color='#11cfbc'>▼</span>",
+        "on-click": "niri msg action focus-workspace-down"
     },
     "custom/reboot": {
         "format": "Reboot ⥀",
