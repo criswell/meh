@@ -131,7 +131,7 @@
         "on-click": "dolphin"
     },
     "clock": {
-        // "timezone": "America/New_York",
+        "timezone": "America/New_York",
         "format": " {:%b %d %Y %I:%M %p}",
         "format-alt": " {:%A %b %d %Y}",
         "tooltip-format": "<span color='#35b9ab'><tt><small>{calendar}</small></tt></span>",
