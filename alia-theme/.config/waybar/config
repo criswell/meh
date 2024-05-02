@@ -127,7 +127,8 @@
         "exec" : "/home/sam/bin/travel-mode-check.sh",
         "interval" : 10,
         "tooltip" : true,
-        "tooltip-format" : "Travel Mode"
+        "tooltip-format" : "Travel Mode",
+        "on-click" : "/home/sam/bin/travel-mode-toggle.sh",
     },
     "custom/firefox": {
         "format" : "<span color='#03dffc'>Firefox  🌐</span>", // 🦊", // 🌐",
