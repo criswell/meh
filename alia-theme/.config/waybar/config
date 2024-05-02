@@ -11,6 +11,10 @@
         "custom/brackleft",
         "custom/power",
         "custom/brackright",
+
+        "custom/brackleft",
+        "custom/sleep",
+        "custom/brackright",
  
         "custom/brackleft",
         "custom/workspace-up",
@@ -110,10 +114,10 @@
         "on-click": "systemctl reboot"
     },
     "custom/sleep": {
-        "format": "Sleep 💤",
+        "format": "💤🔒",
         "tooltip": true,
         "tooltip-format": "(L) Sleep",
-        "on-click": "systemctl suspend"
+        "on-click": "swaylock; systemctl suspend"
     },
     "custom/firefox": {
         "format" : "<span color='#03dffc'>Firefox  🌐</span>", // 🦊", // 🌐",
