@@ -15,13 +15,17 @@
         "custom/brackleft",
         "custom/sleep",
         "custom/brackright",
- 
+
         "custom/brackleft",
         "custom/workspace-up",
         "custom/brackright",
 
         "custom/brackleft",
         "custom/workspace-down",
+        "custom/brackright",
+
+        "custom/brackleft",
+        "custom/travel-mode",
         "custom/brackright",
     ],
     "modules-center": [
@@ -118,6 +122,12 @@
         "tooltip": true,
         "tooltip-format": "(L) Sleep",
         "on-click": "swaylock; systemctl suspend"
+    },
+    "custom/travel-mode": {
+        "exec" : "/home/sam/bin/travel-mode-check.sh",
+        "interval" : 10,
+        "tooltip" : true,
+        "tooltip-format" : "Travel Mode"
     },
     "custom/firefox": {
         "format" : "<span color='#03dffc'>Firefox  🌐</span>", // 🦊", // 🌐",
