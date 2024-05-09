@@ -1,1 +1,1 @@
-Plug 'jasoncox/vim-wayland-clipboard'
+Plug 'jasonccox/vim-wayland-clipboard'
