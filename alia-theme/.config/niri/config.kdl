@@ -54,13 +54,13 @@ input {
     // disable-power-key-handling
 }
 
-output "DP-6" {
+output "DP-9" {
     // main monitor
     //mode "3840x1200@60"
     position x=2560 y=0
 }
 
-output "DP-8" {
+output "DP-6" {
     // secondary
     //mode "2560x1080@60"
     position x=0 y=0
