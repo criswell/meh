@@ -280,6 +280,11 @@ function! <SID>BufcloseCloseIt()
 endfunction
 
 function! SuperCleverTab()
+    let l:copilot_suggestion = copilot#GetDisplayedSuggestion()
+    if !empty(l:copilot_suggestion)
+        return copilot#Accept("\<Tab>")
+    endif
+
     if strpart(getline('.'), 0, col('.') - 1) =~ '^\s*$'
         return "\<Tab>"
     else
