@@ -229,8 +229,8 @@
         "position": "left",
         "width": 35,
         "modules-center": [
-            "custom/slack",
             "custom/firefox",
+            "custom/slack",
             "custom/dolphin",
             "custom/obsidian",
         ],
