@@ -110,6 +110,7 @@ layout {
         // Color of the ring on the active monitor: red, green, blue, alpha.
         // active-color 127 200 255 255
         active-color 29 196 32 255
+        active-gradient from="#5A127E" to="#1EC520" //angle=180 //relative-to="workspace-view"
 
         // Color of the ring on inactive monitors: red, green, blue, alpha.
         inactive-color 80 80 80 255
