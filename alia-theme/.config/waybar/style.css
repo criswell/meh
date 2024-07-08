@@ -1,88 +1,144 @@
 * {
-    border:        none;
-    border-radius: 0;
-    font-family:   "Source Sans Pro", "FontAwesome 6 Free";
-    font-size:     15px;
-    box-shadow:    none;
-    text-shadow:   none;
-    transition-duration: 0s;
+  border:        none;
+  border-radius: 0;
+  font-family:   "Source Sans Pro", "FontAwesome 6 Free";
+  font-size:     15px;
+  box-shadow:    none;
+  text-shadow:   none;
+  transition-duration: 0s;
+  margin: 0px 0px 0px 0px;
+  padding: 0px;
+}
+
+/* The right bar */
+#mode,
+#battery,
+#cpu,
+#clock,
+#memory,
+#network,
+#bluetooth,
+#pulseaudio,
+#idle_inhibitor,
+#temperature,
+#custom-layout,
+#custom-zypper,
+#custom-power,
+#custom-sleep,
+#custom-workspace-up,
+#custom-workspace-down,
+#custom-travel-mode,
+#backlight {
+  background: rgba(58, 0, 105, 0.8);
+  padding: 0px 10px;
+  background-image: linear-gradient(180deg, #0f0014 0%, #1B0030 52%, #160057 70%);
 }
 
 window#waybar {
-    color: rgba(53, 185, 171, 1);
-    background-color: rgba(23, 63, 79, 0.8);
-    border-bottom: 2px solid rgba(53, 185, 171, 0.4);
+  color: rgba(136, 209, 169, 1);
+  background-color: transparent;
 }
 
 window#waybar.solo {
-    color: rgba(53, 185, 171, 1);
-}
-
-#workspaces {
-    margin: 0 5px;
-}
-
-#custom-scratchpad {
-    margin: 0px	5px;
-    padding: 0px 5px;
-}
-
-#workspaces button {
-    padding: 0 5px;
-    color: rgba(53, 185, 171, 1);
-}
-
-#workspaces button.focused {
-    color: rgba(115, 186, 37, 1);
-}
-
-#workspaces button.visible {
-    color: rgba(115, 186, 37, 1);
-}
-
-#workspaces button.urgent {
-    color: rgba(33, 164, 223, 1);
-}
-
-#mode, 
-#battery, 
-#cpu, 
-#memory, 
-#network, 
-#bluetooth,
-#pulseaudio, 
-#idle_inhibitor, 
-#temperature,
-#custom-layout,
-#backlight {
-    margin: 0px 6px 0px 10px;
-/*    min-width: 30px;*/
+  color: rgba(53, 185, 171, 1);
 }
 
 #clock {
-    margin: 0px 6px 0px 10px;
+  border-radius: 0px 20px 20px 0px;
+  margin-right: 10px;
+  padding: 0px 20px;
+}
+
+#custom-zypper {
+  border-radius: 20px 0px 0px 20px;
+  margin-right: 0px;
+  padding: 0px 20px;
+}
+
+#round-right {
+}
+
+#workspaces {
+  margin: 0 5px;
+}
+
+#custom-scratchpad {
+  margin: 0px	5px;
+  padding: 0px 5px;
+}
+
+#workspaces button {
+  padding: 0 5px;
+  color: rgba(53, 185, 171, 1);
+}
+
+#workspaces button.focused {
+  color: rgba(115, 186, 37, 1);
+}
+
+#workspaces button.visible {
+  color: rgba(115, 186, 37, 1);
+}
+
+#workspaces button.urgent {
+  color: rgba(33, 164, 223, 1);
 }
 
 #battery.warning {
-   color: rgba(255, 210, 4, 1);
+  color: rgba(255, 210, 4, 1);
 }
 
 #battery.critical {
-    color: rgba(238, 46, 36, 1);
+  color: rgba(238, 46, 36, 1);
 }
 
 #battery.charging {
-    color: rgba(217, 216, 216, 1);
+  color: rgba(217, 216, 216, 1);
 }
 
 #bluetooth.disabled {
-    color: rgba(128, 128, 128, 1);
+  color: rgba(128, 128, 128, 1);
 }
 
 #bluetooth.off {
-    color: rgba(128, 128, 128, 1);
+  color: rgba(128, 128, 128, 1);
 }
 
 #bluetooth.connected {
-    color: rgba(115, 186, 37, 1);
+  color: rgba(115, 186, 37, 1);
+}
+
+/* The left bar */
+#custom-power {
+  border-radius: 20px 0px 0px 0px;
+  margin-left: 0px;
+  padding: 0px 20px;
+}
+
+#custom-travel-mode {
+  border-radius: 0px 20px 20px 0px;
+  margin-right: 10px;
+  padding: 0px 20px;
+}
+
+.side {
+  border:        none;
+  border-radius: 0;
+  font-family:   "Symbols Nerd Font Mono";
+  box-shadow:    none;
+  text-shadow:   none;
+  transition-duration: 0s;
+  margin: 0px 0px 0px 0px;
+  background-image: linear-gradient(180deg, #160057 0%, #22003B 52%, #471601 70%);
+  padding: 0px 0px;
+}
+
+#custom-slack,
+#custom-firefox,
+#custom-obsidian,
+#custom-menu,
+#custom-dolphin {
+  padding: 5px 0px;
+  text-shadow: black 1px 1px;
+  font-size: 30px;
 }
