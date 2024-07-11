@@ -15,7 +15,7 @@ function! PageUpOrTop()
     " Get the current line number
     let l:current_line = line('.')
     " Scroll one page up
-    normal! <PageUp>
+    execute "normal! \<PageUp>"
     " Get the new line number after scrolling up
     let l:new_line = line('.')
     " Check if the line number did not change (indicating no more pages left to scroll)
