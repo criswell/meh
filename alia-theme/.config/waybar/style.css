@@ -142,3 +142,9 @@ window#waybar.solo {
   text-shadow: black 1px 1px;
   font-size: 30px;
 }
+
+#custom-diffuse {
+  padding: 5px 0px;
+  text-shadow: black 1px 1px;
+  font-size: 22px;
+}

@@ -232,11 +232,18 @@
             "custom/firefox",
             "custom/slack",
             "custom/dolphin",
+            "custom/diffuse",
             "custom/obsidian",
         ],
         "modules-right": [
             "custom/menu",
         ],
+        "custom/diffuse": {
+            "format": "",
+            "tooltip": true,
+            "tooltip-format": "Launch Diffuse",
+            "on-click": "flatpak run io.github.mightycreak.Diffuse &"
+        },
         "custom/obsidian": {
             "format": "󱜦",
             "tooltip": true,
