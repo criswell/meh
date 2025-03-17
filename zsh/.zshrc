@@ -48,7 +48,7 @@ plugins=(git mercurial zsh-autosuggestions wd poetry asdf jira)
 source $ZSH/oh-my-zsh.sh
 
 # Customize to your needs...
-export PATH=$PATH:/usr/local/sbin:/usr/local/bin:/usr/bin:/usr/bin/core_perl:/home/sam/bin:/home/sam/.cabal/bin:/snap/bin
+export PATH=$PATH:/usr/local/sbin:/usr/local/bin:/usr/bin:/usr/bin/core_perl:/home/sam/bin:/home/sam/.cabal/bin:/snap/bin:/home/sam/.local/bin
 
 export LC_ALL=
 export EDITOR="vim"
