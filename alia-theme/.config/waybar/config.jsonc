@@ -231,6 +231,7 @@
         "modules-center": [
             "custom/firefox",
             "custom/slack",
+            "custom/codellm",
             "custom/dolphin",
             "custom/diffuse",
             "custom/obsidian",
@@ -238,6 +239,13 @@
         "modules-right": [
             "custom/menu",
         ],
+        "custom/codellm": {
+            "format": "<span font='22'>⧎</span>",
+            //"format": "<span font='22'>☳</span>",
+            "tooltip": true,
+            "tooltip-format": "Launch CodeLLM",
+            "on-click": "codellm --enable-features=WaylandWindowDecorations --ozone-platform-hint=auto &"
+        },
         "custom/diffuse": {
             "format": "",
             "tooltip": true,
