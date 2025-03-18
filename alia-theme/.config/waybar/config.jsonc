@@ -229,6 +229,7 @@
         "position": "left",
         "width": 35,
         "modules-center": [
+            "custom/zen",
             "custom/firefox",
             "custom/slack",
             "custom/codellm",
@@ -239,6 +240,12 @@
         "modules-right": [
             "custom/menu",
         ],
+        "custom/zen": {
+            "format": "<span font='20'>☯</span>",
+            "tooltip": true,
+            "tooltip-format": "Zen Browser",
+            "on-click": "flatpak run app.zen_browser.zen &"
+        },
         "custom/codellm": {
             "format": "<span font='22'>⧎</span>",
             //"format": "<span font='22'>☳</span>",
