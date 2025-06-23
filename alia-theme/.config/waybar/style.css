@@ -148,3 +148,12 @@ window#waybar.solo {
   text-shadow: black 1px 1px;
   font-size: 22px;
 }
+
+#custom-codellm {
+  font-size: 25px;
+  background-image: url("/home/sam/.icons/codellm.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  box-shadow: 1px 1px 2px 1px @wb-hvr-bg
+}

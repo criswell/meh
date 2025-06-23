@@ -54,7 +54,7 @@ DISABLE_CORRECTION="true"
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git mercurial zsh-autosuggestions wd poetry asdf jira)
+plugins=(git zsh-autosuggestions wd poetry asdf jira)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -119,7 +119,7 @@ zle -N up-line-or-beginning-search
 zle -N down-line-or-beginning-search
 
 # keybindings for history autocomplete
-[[ -n "${key[Up]}" ]] && bindkey "${key[Up]}" up-line-or-beginning-search 
+[[ -n "${key[Up]}" ]] && bindkey "${key[Up]}" up-line-or-beginning-search
 [[ -n "${key[Down]}" ]] && bindkey "${key[Down]}" down-line-or-beginning-search
 
 if [ -d "$HOME/.local/bin" ]; then
@@ -156,7 +156,7 @@ if [ -f ~/.aliases ]; then
     source ~/.aliases
 fi
 
-stty -ixon
+#stty -ixon
 
 export LESS="NReFX"
 # Less syntax highlighting
