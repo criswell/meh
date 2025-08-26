@@ -236,10 +236,18 @@
             "custom/dolphin",
             "custom/diffuse",
             "custom/obsidian",
+            "custom/virtmanager",
         ],
         "modules-right": [
             "custom/menu",
         ],
+        "custom/virtmanager": {
+            "format": "<span font='20'>󰒋</span>",
+            //"format": " ",
+            "tooltip": true,
+            "tooltip-format": "Launch Virtual Machine Manager",
+            "on-click": "virt-manager &"
+        },
         "custom/zen": {
             "format": "<span font='20'>☯</span>",
             "tooltip": true,
