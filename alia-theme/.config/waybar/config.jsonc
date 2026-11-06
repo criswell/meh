@@ -19,6 +19,8 @@
         "custom/workspace-down",
 
         "custom/travel-mode",
+
+        "custom/center-column",
     ],
     "modules-center": [
     ],
@@ -106,6 +108,13 @@
         "tooltip-format" : "Travel Mode",
         "on-click" : "/home/sam/bin/travel-mode-toggle.sh",
     },
+    "custom/center-column": {
+        "exec" : "/home/sam/bin/center-column-check.sh",
+        "interval" : 10,
+        "tooltip" : true,
+        "tooltip-format" : "Center Column Toggle",
+        "on-click" : "/home/sam/bin/center-column-toggle.sh",
+    },
     "custom/firefox": {
         "format" : "<span color='#03dffc'>Firefox  🌐</span>", // 🦊", // 🌐",
         "tooltip": true,
@@ -119,7 +128,7 @@
     },
     "custom/dolphin": {
         "format": "<span color='#03dffc'>Files 🗁</span>",
-        "on-click": "dolphin"
+        "on-click": "waydir"
     },
     "clock": {
         "timezone": "America/New_York",
@@ -260,8 +269,10 @@
             //"format": "<span font='22'>☳</span>",
             "format": " ",
             "tooltip": true,
-            "tooltip-format": "Launch CodeLLM",
-            "on-click": "codellm --enable-features=WaylandWindowDecorations --ozone-platform-hint=auto &"
+            "tooltip-format": "Launch DeepAgent",
+            "on-click": "(cd /home/sam/packages/deepagent/1.101.24301 && ./deepagent-app --enable-features=WaylandWindowDecorations --ozone-platform-hint=auto) &"
+            //"on-click": "(cd /home/sam/packages/deepagent && ./deepagent-app --enable-features=WaylandWindowDecorations --ozone-platform-hint=auto) &"
+            //"on-click": "(cd /home/sam/packages && ./deepagent-app --enable-features=WaylandWindowDecorations --ozone-platform-hint=auto) &"
         },
         "custom/diffuse": {
             "format": "",

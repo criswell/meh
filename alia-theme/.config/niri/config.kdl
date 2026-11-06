@@ -327,6 +327,7 @@ binds {
     Mod+F { maximize-column; }
     Mod+Shift+F { fullscreen-window; }
     Mod+C { center-column; }
+    Mod+Shift+C { spawn "bash" "-c" "/home/sam/bin/center-column-toggle.sh"; }
 
     // Finer width adjustments.
     // This command can also:
@@ -345,7 +346,7 @@ binds {
 
     // Actions to switch layouts.
     // Note: if you uncomment these, make sure you do NOT have
-    // a matching layout switch hotkey configured in xkb options above.
+    // a matching l_ayout switch hotkey configured in xkb options above.
     // Having both at once on the same hotkey will break the switching,
     // since it will switch twice upon pressing the hotkey (once by xkb, once by niri).
     // Mod+Space       { switch-layout "next"; }
@@ -387,3 +388,14 @@ debug {
     // Override the DRM device that niri will use for all rendering.
     // render-drm-device "/dev/dri/renderD129"
 }
+
+window-rule {
+    match app-id="jnext"
+    
+    // Forces the window out of floating layers and into the tiling strip
+    open-floating false
+    
+    // Optional: Set a clean default width for your debugger workspace
+    default-column-width { proportion 0.5; }
+}
+

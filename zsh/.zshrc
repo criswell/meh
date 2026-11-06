@@ -54,7 +54,7 @@ DISABLE_CORRECTION="true"
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git zsh-autosuggestions wd poetry asdf jira)
+plugins=(git zsh-autosuggestions wd poetry asdf)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -188,3 +188,52 @@ zpm load zpm-zsh/autoenv
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+
+# bun completions
+[ -s "/home/sam/.bun/_bun" ] && source "/home/sam/.bun/_bun"
+
+# bun
+export BUN_INSTALL="$HOME/.bun"
+export PATH="$BUN_INSTALL/bin:$PATH"
+
+# dox-agent PATH (removed 2026-08-18: legacy launcher retired, go-native binary lives in ~/.local/bin)
+# export PATH="/home/sam/work/doximity/agentic-dev/bin:$PATH"
+
+# NPM global bin (added by Qwen Code installer)
+export PATH="$HOME/.npm-global/bin:$PATH"
+export PATH="/home/sam/.local/bin:$PATH"
+
+# Abacus AI CLI
+export PATH="/home/sam/.abacusai/bin:$PATH"
+
+# claude-fireworks: toggle claude between native Anthropic and Fireworks AI backend.
+# dox-agent --fireworks currently broken (see dox-agent-improvements cerebrum project),
+# so this sets/unsets the ANTHROPIC_* env vars directly.
+claude-fireworks() {
+    if [[ -n "$_FIREWORKS_ACTIVE" ]]; then
+        unset ANTHROPIC_BASE_URL ANTHROPIC_API_KEY ANTHROPIC_DEFAULT_SONNET_MODEL \
+              ANTHROPIC_DEFAULT_OPUS_MODEL ANTHROPIC_SMALL_FAST_MODEL ANTHROPIC_DEFAULT_HAIKU_MODEL \
+              _FIREWORKS_ACTIVE
+        echo "claude-fireworks: switched back to native Anthropic backend"
+    else
+        local key="${DOX_FIREWORKS_API_KEY:-$FIREWORKS_API_KEY}"
+        if [[ -z "$key" ]]; then
+            echo "claude-fireworks: DOX_FIREWORKS_API_KEY (or FIREWORKS_API_KEY) is not set" >&2
+            return 1
+        fi
+        export ANTHROPIC_BASE_URL="https://api.fireworks.ai/inference"
+        export ANTHROPIC_API_KEY="$key"
+        export ANTHROPIC_DEFAULT_SONNET_MODEL="accounts/fireworks/models/kimi-k2p7-code"
+        export ANTHROPIC_DEFAULT_OPUS_MODEL="accounts/fireworks/models/kimi-k2p7-code"
+        export ANTHROPIC_SMALL_FAST_MODEL="accounts/fireworks/models/glm-5p2"
+        export ANTHROPIC_DEFAULT_HAIKU_MODEL="accounts/fireworks/models/glm-5p2"
+        export _FIREWORKS_ACTIVE=1
+        echo "claude-fireworks: switched to Fireworks backend (kimi-k2p7-code / glm-5p2)"
+    fi
+}
+
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/home/sam/google-cloud-sdk/path.zsh.inc' ]; then . '/home/sam/google-cloud-sdk/path.zsh.inc'; fi
+
+# The next line enables shell command completion for gcloud.
+if [ -f '/home/sam/google-cloud-sdk/completion.zsh.inc' ]; then . '/home/sam/google-cloud-sdk/completion.zsh.inc'; fi
