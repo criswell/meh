@@ -148,9 +148,9 @@ if which ruby >/dev/null && which gem >/dev/null; then
 fi
 
 # NPM bullshit
-NPM_PACKAGES="${HOME}/.npm-packages"
+NPM_PACKAGES="${HOME}/node_modules"
 
-export PATH="$PATH:$NPM_PACKAGES/bin"
+export PATH="$PATH:$NPM_PACKAGES/.bin"
 
 if [ -f ~/.aliases ]; then
     source ~/.aliases

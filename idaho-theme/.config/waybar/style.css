@@ -1,0 +1,185 @@
+/* ---------------------------------------------------------------------------
+   Palette — derived from ~/Pictures/bkg/hcy0t4y0ungc1.png
+   (deep teal cosmos · crimson triangle · magenta nebula)
+   Flow: crimson at the top bar, fading through navy into teal down the
+   left/side bar. All colors live here; config.jsonc holds no inline colors.
+--------------------------------------------------------------------------- */
+@define-color bg-deep    #0A101C;  /* near-black navy — left edge of wallpaper */
+@define-color bg-teal    #163D41;  /* dark teal — wallpaper midtones           */
+@define-color bg-teal-hi #1D4F4C;  /* lighter teal-green — right side          */
+@define-color bg-crimson      #3A0E1F;  /* dark crimson — triangle body       */
+@define-color bg-crimson-dark #2E0A18;  /* deeper crimson — gradient partner  */
+@define-color text-main  #8FCBB4;  /* soft teal-sage — default bar text        */
+@define-color teal       #56C2A8;  /* accent — brightened wallpaper teal       */
+@define-color crimson    #D14B6B;  /* accent — brightened triangle red         */
+@define-color gold       #E8923A;  /* accent — star sparkle orange             */
+@define-color magenta    #C86BC7;  /* accent — nebula glow                     */
+@define-color warn       #FFD204;  /* battery warning                          */
+@define-color crit       #EE2E24;  /* battery critical / urgent red            */
+@define-color dim        #808080;  /* disabled/off modules                     */
+@define-color wb-hvr-bg  rgba(86, 194, 168, 0.45);  /* hover glow              */
+
+* {
+  border:        none;
+  border-radius: 0;
+  font-family:   "Source Sans Pro", "FontAwesome 6 Free";
+  font-size:     15px;
+  box-shadow:    none;
+  text-shadow:   none;
+  transition-duration: 0s;
+  margin: 0px 0px 0px 0px;
+  padding: 0px;
+}
+
+/* The right bar */
+#mode,
+#battery,
+#cpu,
+#clock,
+#memory,
+#network,
+#bluetooth,
+#pulseaudio,
+#idle_inhibitor,
+#temperature,
+#custom-layout,
+#custom-zypper,
+#custom-power,
+#custom-sleep,
+#custom-workspace-up,
+#custom-workspace-down,
+#backlight {
+  background: @bg-crimson;
+  padding: 0px 10px;
+  /* subtle vertical shade; starts at the exact color the side bar starts
+     with, so the corner where the two bars meet blends seamlessly */
+  background-image: linear-gradient(180deg, @bg-crimson 0%, @bg-crimson-dark 100%);
+}
+
+window#waybar {
+  color: @text-main;
+  background-color: transparent;
+}
+
+#clock {
+  border-radius: 0px 20px 20px 0px;
+  margin-right: 10px;
+  padding: 0px 20px;
+}
+
+#custom-zypper {
+  border-radius: 20px 0px 0px 20px;
+  margin-right: 0px;
+  padding: 0px 20px;
+}
+
+#round-right {
+}
+
+#workspaces {
+  margin: 0 5px;
+}
+
+#custom-scratchpad {
+  margin: 0px	5px;
+  padding: 0px 5px;
+}
+
+#workspaces button {
+  padding: 0 5px;
+  color: @teal;
+}
+
+#workspaces button.focused {
+  color: @crimson;
+}
+
+#workspaces button.visible {
+  color: @crimson;
+}
+
+#workspaces button.urgent {
+  color: @magenta;
+}
+
+#battery.warning {
+  color: @warn;
+}
+
+#battery.critical {
+  color: @crit;
+}
+
+#battery.charging {
+  color: @teal;
+}
+
+#bluetooth.disabled {
+  color: @dim;
+}
+
+#bluetooth.off {
+  color: @dim;
+}
+
+#bluetooth.connected {
+  color: @teal;
+}
+
+/* The left bar */
+#custom-power {
+  color: @crimson;
+  border-radius: 20px 0px 0px 0px;
+  margin-left: 0px;
+  padding: 0px 20px;
+}
+
+#custom-workspace-up,
+#custom-workspace-down {
+  color: @teal;
+}
+
+#custom-slash-right,
+#custom-slash-left {
+  color: @gold;
+}
+
+/* last module of the left pill: rounded right end + gap before the right pill
+   (was on #custom-travel-mode, removed with the travel-mode module) */
+#custom-workspace-down {
+  border-radius: 0px 20px 20px 0px;
+  margin-right: 10px;
+  padding: 0px 20px;
+}
+
+.side {
+  border:        none;
+  border-radius: 0;
+  font-family:   "Symbols Nerd Font Mono";
+  box-shadow:    none;
+  text-shadow:   none;
+  transition-duration: 0s;
+  margin: 0px 0px 0px 0px;
+  background-image: linear-gradient(180deg, @bg-crimson-dark 0%, @bg-deep 40%, @bg-teal 76%, @bg-teal-hi 100%);
+  /* starts at the top bar's BOTTOM color (@bg-crimson-dark), not its top
+     color — the side bar continues the top bar's gradient where they
+     meet instead of repeating it, so the junction flows crimson→teal
+     in one continuous darkening ramp */
+  padding: 0px 0px;
+}
+
+#custom-obsidian,
+#custom-menu,
+#custom-dolphin {
+  padding: 5px 0px;
+  text-shadow: black 1px 1px;
+  font-size: 30px;
+}
+
+/* Tooltips (incl. the clock's calendar popup) */
+tooltip {
+  background: rgba(10, 16, 28, 0.95);
+  color: @text-main;
+  border: 1px solid @bg-teal-hi;
+  border-radius: 6px;
+}

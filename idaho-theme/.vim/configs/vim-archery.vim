@@ -1,0 +1,1 @@
+Plug 'Badacadabra/vim-archery'

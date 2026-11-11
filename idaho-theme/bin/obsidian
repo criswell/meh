@@ -1,0 +1,3 @@
+#!/bin/sh
+# Obsidian AppImage launcher (AppImage moved out of ~/Downloads so it survives download cleanups)
+exec "$HOME/Applications/Obsidian.AppImage" "$@"

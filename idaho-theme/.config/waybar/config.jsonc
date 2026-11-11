@@ -1,0 +1,247 @@
+// -*- mode: json -*-
+[
+    {
+        "name": "top",
+        "layer": "top", // Waybar at top layer
+        "position": "top", // Waybar position (top|bottom|left|right)
+        "height": 30, // Waybar height (to be removed for auto height)
+        "margin-top" : 4,
+    // "width": 1280, // Waybar width
+    // "gtk-layer-shell": "false",
+    // Choose the order of the modules
+    "modules-left": [
+        "custom/power",
+
+        "custom/sleep",
+
+        "custom/workspace-up",
+
+        "custom/workspace-down",
+    ],
+    "modules-center": [
+    ],
+    "modules-right": [
+        "custom/zypper",
+
+        "network",
+        "bluetooth",
+
+        "cpu",
+        "memory",
+        "temperature",
+
+        "battery",
+        "pulseaudio",
+
+        "clock"
+    ],
+    "custom/test-blocks": {
+        "format": "▁▂▃▄▅▆▇█",
+        "tooltip": false
+    },
+    "custom/test-bracket": {
+        "format": "❨ ❩ , ❪ ❫ , ❴ ❵ , ❬ ❭ , ❮ ❯ , ❰ ❱ , ❲ ❳",
+        "tooltip": false
+    },
+    "custom/vert-dot": {
+        "format": "╏",
+        "tooltip": false
+    },
+    "custom/brackleft": {
+        "format": " ❨",
+        "tooltip": false
+    },
+    "custom/brackright": {
+        "format": "❩  ",
+        "tooltip": false
+    },
+    "custom/slash-right": {
+        "format": "◥◣", // colored via #custom-slash-right in style.css
+        "tooltip": false
+    },
+    "custom/slash-left": {
+        "format": "◢◤", // colored via #custom-slash-left in style.css
+        "tooltip": false
+    },
+    "custom/slash3": {
+        "format": "⫻",
+        "tooltip": false
+    },
+    "custom/zypper": {
+        "format": "{} ",
+        "interval": 3600,
+        "exec": "zypper lu | grep 'v |' | wc -l; echo 'packages to update'",
+        "exec-if": "exit 0",
+        "on-click": "exec konsole -e sudo sh -c 'zypper ref; zypper dup; pkill -SIGRTMIN+8 waybar'",
+        "signal": 8
+    },
+    "custom/power": {
+        "format": "⏻", // colored via #custom-power in style.css
+        "on-click": "/home/sam/.config/rofi/applets/bin/powermenu.sh"
+    },
+    "custom/workspace-up": {
+        "format": "▲", // colored via #custom-workspace-up in style.css
+        "on-click": "niri msg action focus-workspace-up"
+    },
+    "custom/workspace-down": {
+        "format": "▼", // colored via #custom-workspace-down in style.css
+        "on-click": "niri msg action focus-workspace-down"
+    },
+    "custom/reboot": {
+        "format": "Reboot ⥀",
+        "on-click": "systemctl reboot"
+    },
+    "custom/sleep": {
+        "format": "💤🔒",
+        "tooltip": true,
+        "tooltip-format": "(L) Sleep",
+        "on-click": "swaylock; systemctl suspend"
+    },
+    "custom/lock": {
+        "format" : "Lock 🔒",
+        "tooltip": true,
+        "on-click": "swaylock"
+    },
+    "clock": {
+        "timezone": "America/New_York",
+        "format": " {:%b %d %Y %I:%M %p}",
+        "format-alt": " {:%A %b %d %Y}",
+        "tooltip-format": "<tt><small>{calendar}</small></tt>", // tooltip text color styled in style.css
+        "calendar": {
+            "mode-mon-col"      : 4,
+            "weeks-pos"         : "left",
+            "on-scroll"         : 1,
+            "on-click-right"    : "mode",
+            // NOTE: Pango markup cannot reference CSS variables — these four
+            // mirror the style.css palette (teal / gold / magenta / crimson)
+            "format": {
+                "months":    "<span color='#56C2A8'><b>{}</b></span>",
+                "weeks":    "<span color='#E8923A'><b>{}</b></span>",
+                "weekdays": "<span color='#C86BC7'><b>{}</b></span>",
+                "today":    "<span color='#D14B6B'><b><u>{}</u></b></span>"
+            }
+        },
+        "actions": {
+            "on-click-right"    : "mode",
+            "on-scroll-up"      : "shift_up",
+            "on-scroll-down"      : "shift_down"
+        },
+        "interval": 10
+    },
+    "cpu": {
+        "format": "{usage}% ",
+        "tooltip": false
+    },
+    "memory": {
+        "format": "{}% "
+    },
+    "temperature": {
+        // "thermal-zone": 2,
+        // "hwmon-path": "/sys/class/hwmon/hwmon2/temp1_input",
+        "critical-threshold": 80,
+        // "format-critical": "{temperatureC}°C {icon}",
+        "format": "{temperatureC}°C {icon}",
+        "format-icons": ["", "", ""]
+    },
+    //"backlight": {
+        // "device": "acpi_video1",
+    //    "format": "{percent}% {icon}",
+    //    "format-icons": ["", ""]
+    //},
+    "battery": {
+        "states": {
+            "good": 85,
+            "warning": 30,
+            "critical": 15
+        },
+        "format": "{icon}",
+        "format-charging": "",
+        "format-plugged": "",
+        "format-alt": "{capacity}% {time}",
+        "format-icons": ["", "", "", "", ""]
+    },
+    "network": {
+        // "interface": "wlp2*", // (Optional) To force the use of this interface
+        "format-wifi": "",
+        "format-ethernet": "",
+        "format-linked": "",
+        "format-disconnected": "⚠",
+        "format-alt": "{ifname} {essid} ({signalStrength}%)",
+        //"on-click-right": "exec konsole -e sudo sh -c 'nmtui'"
+        "on-click-right": "exec rofi-network-manager"
+    },
+    "bluetooth": {
+        "format": "",
+        "format-disabled": "",
+        "format-off": "",
+        "format-connected": " {num_connections}",
+        // "format-connected": " {device_alias}",
+        "tooltip-format": "{controller_address} {status}\n\n{num_connections} connected",
+        "tooltip-format-disabled": "{status}",
+        "tooltip-format-connected": "{controller_address}\n\n{num_connections} connected\n\n{device_enumerate}",
+        "tooltip-format-enumerate-connected": "{device_alias}\t{device_address}",
+        "format-connected-battery": " {device_alias} {device_battery_percentage}%",
+        "tooltip-format-enumerate-connected-battery": "{device_alias}\t{device_address}\t{device_battery_percentage}%",
+        // "format-device-preference": [ "device1", "device2" ], // preference list deciding the displayed device
+        "on-click": "bluetooth toggle; pkill -SIGRTMIN+8 waybar",
+        "on-click-right": "exec konsole -e sh -c 'bluetoothctl'"
+    },
+    "pulseaudio": {
+        "format": "{icon}",
+        "format-alt": "{volume} {icon}",
+        "format-alt-click": "click-right",
+        "format-muted": "",
+        "format-icons": {
+            "headphones": "",
+            "handsfree": "",
+            "headset": "",
+            "phone": "",
+            "portable": "",
+            "car": "",
+            "default": ["", "", ""]
+        },
+        "scroll-step": 10,
+        "on-click": "pactl set-sink-mute @DEFAULT_SINK@ toggle",
+        "on-click-right": "pavucontrol",
+        "tooltip": false
+    },
+    },
+    {
+        "name": "side",
+        "layer": "top",
+        "position": "left",
+        "width": 35,
+        "modules-center": [
+            "custom/zen",
+            "custom/dolphin",
+            "custom/obsidian",
+        ],
+        "modules-right": [
+            "custom/menu",
+        ],
+        "custom/zen": {
+            "format": "<span font='20'>☯</span>",
+            "tooltip": true,
+            "tooltip-format": "Zen Browser",
+            "on-click": "zen &"
+        },
+        "custom/obsidian": {
+            "format": "󱜦",
+            "tooltip": true,
+            "tooltip-format": "Launch Obsidian",
+            "on-click": "/home/sam/bin/obsidian &"
+        },
+        "custom/menu": {
+            "format": "󰉡",
+            "tooltip": true,
+            "tooltip-format": "Open Menu",
+            "on-click": "rofi -show drun -location 7"
+        },
+        "custom/dolphin": {
+            "format": "\uf07b",
+            "tooltip": true,
+            "tooltip-format": "File Manager",
+            "on-click": "dolphin &"
+        }
+    },
+]
